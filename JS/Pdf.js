@@ -20,13 +20,11 @@ function generatePdfReport() {
 
 requestAnimationFrame(() => {
     requestAnimationFrame(() => {
-html2canvas: {
-  useCORS: true
-}
+
         html2pdf()
             .set({
                 filename: "HAVS Report.pdf",
-                margin: 0,
+                margin: 1,
                 html2canvas: {
                     scale: 2,
                     useCORS: true
@@ -37,7 +35,6 @@ html2canvas: {
                     orientation: "portrait"
                 }
             })
-            
             .from(document.getElementById("pdfReport"))
             .save();
 
