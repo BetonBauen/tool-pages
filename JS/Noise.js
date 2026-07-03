@@ -81,7 +81,7 @@ function renderToolBreakdown(grouped) {
   if (!wrapper || !container) return;
 
   container.innerHTML = `
-    <label class="input-group-text text-bold section-header mb-3">
+    <label class="input-group-text text-bold bb-section-header">
       TOOL NOISE BREAKDOWN (Sound Power LwA)
     </label>
   `;
@@ -99,7 +99,7 @@ function renderToolBreakdown(grouped) {
 mfrBlock.className = "mb-4";
 
 const mfrHeader = document.createElement("div");
-mfrHeader.className = "input-group-text tool-heading noise-tool-heading mb-3";
+mfrHeader.className = "bb-tool-heading";
 mfrHeader.dataset.manufacturer = mfr;
 
 const textSpan = document.createElement("span");
@@ -108,7 +108,7 @@ textSpan.textContent = mfr;
 mfrHeader.appendChild(textSpan);
 
 const img = document.createElement("img");
-img.className = "manufacturer-logo";
+img.className = "bb-manufacturer-logo";
 img.alt = mfr;
 img.src = `./Assets/Logos/${mfr}.svg`;
 img.loading = "eager";
@@ -143,7 +143,7 @@ mfrBlock.appendChild(mfrHeader);
         .forEach(tool => {
 
           const sound = Number(tool.soundpower) || 0;
-          const icon = tool.icon || "./Assets/Icons/Tools/Default.svg";
+          const icon = tool.icon || "/Assets/Icons/Tools/Default.svg";
 
           const div = document.createElement("div");
           div.className = "alert noise-alert mb-2";

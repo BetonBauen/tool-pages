@@ -61,7 +61,9 @@
   --Pale_Orange: #fdce9b; /* Alert border */
   --Digital_Red:#ff0000; /* Danger band main */ 
   --Pink_Affair:#ffecec; /* Danger band background */ 
-  --Pinkest: #f1aeb5; /* Danger border */   
+  --Pinkest: #f1aeb5; /* Danger border */  
+  --Snowbound: #eaf7fc;
+  --French_Pass: #bdf0ff;
   /* #endregion */
 }
 /* #endregion */
@@ -150,6 +152,12 @@ h2 {
 /* #endregion */
 
 /* #region TOOL HEADERS */
+.tool-heading {
+  font-weight: 600;
+  padding: 6px 10px;
+  background: #f5f5f5;
+}
+
 .bb-tool-heading[data-manufacturer="Golz"] {
   background-color: var(--Carrot_Orange);
   color: var(--White);
@@ -182,134 +190,15 @@ h2 {
   width: auto;}
 /* #endregion */
 
+
+
 .row {
 	margin-top: calc(0 * var(--bs-gutter-y)) !important;
 }
 /* #endregion */
 
-/* #region HAVS PAGE */
-
-/* #region RESULTS */
-.band-safe {
-  --bs-alert-color: var(--Tar);
-  --bs-alert-bg: var(--Gin);
-  --bs-alert-border-color: var(--Subtle_Mint);
-  --bs-alert-link-color: var(--Tar);
-  border-left:6px solid var(--Traditional_Green);
-}
-.band-safe .progress-bar {
-  background-color: var(--Traditional_Green) !important;
-}
-.band-caution {
-  --bs-alert-color: var(--Tar);
-  --bs-alert-bg: var(--Milky);
-  --bs-alert-border-color: var(--Barley_White);
-  --bs-alert-link-color: var(--Tar);
-  border-left:6px solid var(--Glossy_Gold);
-}
-.band-caution .progress-bar {
-  background-color: var(--Glossy_Gold) !important;
-}
-.band-warning {
-  --bs-alert-color: var(--Tar);
-  --bs-alert-bg: var(--Early_Dawn);
-  --bs-alert-border-color: var(--Cream_Brulee);
-  --bs-alert-link-color: var(--Tar);
-  border-left:6px solid var(--Dark_Yellow);
-}
-.band-warning .progress-bar {
-  background-color: var(--Dark_Yellow) !important;
-}
-.band-alert {
-  --bs-alert-color: var(--Tar);
-  --bs-alert-bg: var(--Sazerac);
-  --bs-alert-border-color: var(--Pale_Orange);
-  --bs-alert-link-color: var(--Tar);
-  border-left:6px solid var(--Vivid_Gamboge);
-}
-.band-alert .progress-bar {
-  background-color: var(--Vivid_Gamboge) !important;
-}
-.band-danger {
-  --bs-alert-color: var(--Tar);
-  --bs-alert-bg: var(--Pink_Affair);
-  --bs-alert-border-color: var(--Pinkest);
-  --bs-alert-link-color: var(--Tar);
-  border-left:6px solid var(--Digital_Red);
-}
-.band-danger .progress-bar {
-  background-color: var(--Digital_Red) !important;
-}
-.result-header {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-}
-.result-title {
-  font-weight: 600;
-  /*font-size: 16px;*/
-  font-size: 1.18rem
-}
-.breakdown-title {
-  font-weight: 600;
-  /*font-size: 16px;*/
-  font-size: 1.18rem
-}
-.result.visible {
-  display:block;
-}
-.result.detail {
-  font-size: 0.85rem
-}
-.breakdown-values {
-  font-size: 0.85rem
-}
-.result-status-icon {
-  width: 48px;
-  height: 48px;
-  object-fit: contain;
-  display: block;
-}
-/* #endregion */
-
-/* #region TOOL STATUS */
-
-/* #endregion */
-
-/* #region HAVS Report Specific */
-
-.bbformfield {
-	  background-color: #39668f;
-  color: var(--White);
-  font-weight: 600;
-}
-.report-table th {
-    background:var(--Blue_Dianne);
-    color:white;
-}
-/* #endregion */
-
-/* #endregion */
-
 /* ------------ TOOL NOISE PAGE ---------- */
-.noise-alert {
-  --bs-alert-color: var(--Tar);
-  --bs-alert-bg: #eaf7fc ;
-  --bs-alert-border-color: #bdf0ff;
-  --bs-alert-link-color: var(--Tar);
-  border-left:6px solid #00b0f0;
-}
-.badge {
---bs-badge-font-size: 1.5em !important;
-}
-.noise-tool-heading {
-  padding: 10px 10px;
-}
-.noise-tool-subheading {
-  padding: 6px 6px;
-  background-color: var(--Calming_Blue_Grey);
-  text-transform: uppercase;
-}
+
 
 
 

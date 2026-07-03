@@ -71,6 +71,41 @@ width: 500px !important;}
   width: 100% !important;
   display: block !important;}
 
+.tool-panel.open {
+  display:block;
+}
+.tool-search-wrap {
+  position: sticky;
+  top: 0;
+  background: var(--White);
+  padding: 6px;
+  border-bottom: 1px solid var(--Smooth_Grey);
+}
+.tool-search {
+  width: 100%;
+  padding: 6px;
+  border: 1px solid var(--Smooth_Grey);
+}
+.tool-type-heading {
+  padding: 6px 10px;
+  font-size: 11px;
+  font-weight: 700;
+  background: var(--Off_White_Grey);
+}
+.tool-heading {
+  font-weight: 600;
+  padding: 6px 10px;
+  height: 30px;
+  background: #f5f5f5;
+}
+.tool-option {
+  padding: 3px 10px;
+  cursor: pointer;
+}
+.tool-option:hover {
+  background: var(--Alice_Blue);
+}
+
 .bb-tool-select {
   height: 38px;
   text-align: left !important;}
