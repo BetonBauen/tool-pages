@@ -1,0 +1,254 @@
+/* #region DECLARATIONS */
+:root { 
+  /* #region Logos */
+  --bblogo_main: url('../Assets/Logos/BetonBauenLogo_20.png');
+  --bblogo_pride:url('../Assets/Logos/BetonBauenLogo_20_Pride.png');
+  /*#endregion*/
+  /* #region Icons */
+  --bblogo_shortcut: url('../Assets/Logos/BetonBauenLogo.svg');
+  /*#endregion*/
+  /* #region Colours */
+  --Vivid_Malachite_Green: #04e62a;
+  --Simple_Pastel_Green: #DEF5DE;
+  --Milani: #e84a43;
+  --Luxury_Red: #ad3631;
+  --Black:#000000;
+  --Eerie_Black: #1a1a1a;
+  --White:#ffffff;
+  --Smooth_Grey:#cccccc;
+  --Off_White_Grey:#f0f0f0;
+  --Super_Grey:#999999;
+  --Bold_Grey:#666666;
+  --Matt_Graphite:#424242;
+  --Manhattan_Grey:#525252;
+  --Vivid_Cerulean:#00b0f0; /* BB blue line */
+  --River_Blue:#3b668e;
+  --Blue_Dianne:#224659; /* BB primary blue */
+  --BBFormsBlue: #39668f;
+  --Alice_Blue:#eef8ff;
+  --Arctic_Ice:#f4faff;
+  --Dark_River_Blue: #39668f; /* BB logo secondary blue */
+  --Vintage_Dark_Blue: #29363e; /*BB footer blue */
+  --Arabic_Grey: #888888;
+  --Calming_Blue_Grey: #ccd3da;
+  --Wolf_Gray: #929393; /* BB socials gray */
+  --Misty_Blue_Grey: #dde2e7;
+  --Dark_Charcoal: #333333;
+  --Space_Blue: #1e1b4b;
+  --Subtle_White: #eeeeee;
+  --Blue_Chalk: #ede9fe;
+  --Lavender_Blue: #c7d2fe;
+  --Traffic_Red: #ab1519; /* Hilti */
+  --Water_Blue: #216d76; /* Makita */
+  --Carrot_Orange: #e67045; /* Golz */
+  --Digital_Green: #008000;
+  --Orange: #ffa500;
+  --Gray_Hint: #e6e6e6;
+  --Rare_Jade: #a3cfbb;
+  --Trout: #495057; 
+  --Tar: #2b2f32; /* Result text */
+  --Gin: #e8f5e9; /* Safe band background */
+  --Subtle_Mint: #c8e6c9; /* Safe band border */
+  --Traditional_Green: #4caf50; /* Safe band main */
+  --Glossy_Gold: #ffe57f  ; /* Caution band main */
+  --Milky: #fffcf0; /* Caution band background */
+  --Barley_White: #fff4cd; /* Caution band border */
+  --Dark_Yellow:#ffcc00; /* Warning band main */
+  --Early_Dawn:#fff9e6; /* Warning band background */
+  --Cream_Brulee: #ffe69c; /* Warning band border */
+  --Sazerac:#fff3e0; /* Alert band background */
+  --Vivid_Gamboge:#ff9800; /* Alert band main */
+  --Pale_Orange: #fdce9b; /* Alert border */
+  --Digital_Red:#ff0000; /* Danger band main */ 
+  --Pink_Affair:#ffecec; /* Danger band background */ 
+  --Pinkest: #f1aeb5; /* Danger border */   
+  /* #endregion */
+}
+/* #endregion */
+
+/* #region ALL PAGES */
+
+/* #region ICONS */
+.bb-icon{
+  content: var(--bblogo_shortcut);
+}
+/* #endregion */
+
+/* #region NAVIGATION */
+.bb-nav {
+  background-color: var(--Vintage_Dark_Blue) !important;
+  height: 35px !important;
+}
+/* #endregion */
+
+/* #region BODY - GENERAL */
+  body {
+  font-family:Roboto,sans-serif;
+  background: var(--Off_White_Grey);
+}
+/* #endregion */
+
+/* #region TEXT - GENERAL */
+h1 {
+  margin-top:15px;
+  color:var(--Matt_Graphite);
+  font-weight: 700;
+  font-size: 2em;
+}
+h2 {
+  margin:0;
+  color:var(--Matt_Graphite);
+  font-weight: 200;
+  font-size: 2em;
+}
+.bbunderlinestyle {
+  text-decoration-line: underline;
+  text-decoration-color: var(--Vivid_Cerulean);
+}
+.text-bold {
+  font-weight: 700;
+}
+/* #endregion */
+
+/* #region PAGE HEADER */
+.bb-header-container {
+  box-shadow: 0px 5px 5px rgb(26 26 26 / 5%);
+  background: var(--White);
+}
+.bb-report-header-container {
+  background: var(--White);
+}
+.bb-rectangle {
+  width:10px;
+  height:80px;
+  margin-top: 20px;
+  margin-left: 20px;
+  margin-bottom: 20px;
+  background: var(--Vivid_Cerulean);
+}
+.bb-page-title-container {
+  padding-left: 20px;
+}
+.bb-page-title {
+  margin-top:15px;
+  color:var(--Matt_Graphite);
+  font-weight: 700;
+  font-size: 2em;
+}
+.bb-page-subtitle {
+  margin:0;
+  color:var(--Matt_Graphite);
+  font-weight: 200;
+  font-size: 2em;
+}
+.bb-logo-container {
+ height:80px;
+ object-fit: cover;
+}
+.bb-logo {
+  max-width:50%;
+  max-height:100%;
+  margin-top: 15px;
+  padding-right: 15px;
+  content: var(--bblogo_pride);
+}
+/* #endregion */
+
+/* #region SECTION HEADERS */
+.section-header {
+background-color: #1b2a41 !important;
+color: var(--White);
+}
+/* #endregion */
+
+/* #region TOOL HEADERS */
+.tool-heading[data-manufacturer="Golz"] {
+  background-color: var(--Carrot_Orange);
+  color: var(--White);
+  border-left: 0px solid var(--Vivid_Gamboge);
+}
+.tool-heading[data-manufacturer="Hilti"] {
+  background-color: var(--Traffic_Red);
+  color: var(--White);
+  border-left: 0px solid #ff9800;
+}
+.tool-heading[data-manufacturer="Makita"] {
+  background-color: var(--Water_Blue);
+  color: var(--White);
+  border-left: 0px solid #ff9800;
+}
+.tool-heading.has-logo {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.tool-heading.has-logo .mfr-text {
+  display: none;
+}
+.tool-heading.no-logo .manufacturer-logo {
+  display: none;
+}
+.manufacturer-logo {
+  display: block;
+  max-height: 16px;
+  width: auto;
+}
+/* #endregion */
+
+.row {
+	margin-top: calc(0 * var(--bs-gutter-y)) !important;
+}
+/* #endregion */
+
+/* #region TOOL HEADERS */
+.tool-heading[data-manufacturer="Golz"] {
+  background-color: var(--Carrot_Orange);
+  color: var(--White);
+  border-left: 0px solid var(--Vivid_Gamboge);
+}
+.tool-heading[data-manufacturer="Hilti"] {
+  background-color: var(--Traffic_Red);
+  color: var(--White);
+  border-left: 0px solid #ff9800;
+}
+.tool-heading[data-manufacturer="Makita"] {
+  background-color: var(--Water_Blue);
+  color: var(--White);
+  border-left: 0px solid #ff9800;
+}
+.tool-heading.has-logo {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.tool-heading.has-logo .mfr-text {
+  display: none;
+}
+.tool-heading.no-logo .manufacturer-logo {
+  display: none;
+}
+.manufacturer-logo {
+  display: block;
+  max-height: 16px;
+  width: auto;
+}
+/* #endregion */
+
+.row {
+	margin-top: calc(0 * var(--bs-gutter-y)) !important;
+}
+.bb-table {
+  margin-left: 5px;
+  padding-right: 20px;
+}
+.tool-type-heading {
+  padding: 6px 10px;
+  font-size: 11px;
+  font-weight: 700;
+  background: var(--Off_White_Grey);
+}
+.tool-heading {
+  font-weight: 600;
+  padding: 6px 10px;
+  background: #f5f5f5;
+}
