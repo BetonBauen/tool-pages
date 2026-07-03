@@ -165,6 +165,7 @@ color: var(--White);
 
 /* #region TOOL HEADERS */
 <<<<<<< HEAD
+<<<<<<< HEAD
 .tool-heading {
   font-weight: 600;
   padding: 6px 10px;
@@ -172,6 +173,9 @@ color: var(--White);
 }
 
 .bb-tool-heading[data-manufacturer="Golz"] {
+=======
+.tool-heading[data-manufacturer="Golz"] {
+>>>>>>> parent of b275fc1 (update)
 =======
 .tool-heading[data-manufacturer="Golz"] {
 >>>>>>> parent of b275fc1 (update)
@@ -645,6 +649,9 @@ input[class="magnitude"],input[class="hours"],input[class="minutes"],select {
   text-transform: uppercase;
 }
 /* #endregion */
+<<<<<<< HEAD
+>>>>>>> parent of b275fc1 (update)
+=======
 >>>>>>> parent of b275fc1 (update)
 
 
