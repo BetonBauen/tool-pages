@@ -1,17 +1,17 @@
 document.addEventListener("DOMContentLoaded", () => {
   console.log("=== HAV CALCULATOR INIT RUNNING ===");
 
-  const standaloneSelect = document.querySelector(".bb-tool-select");
-  const standalonePanel = document.querySelector(".bb-tool-panel");
-  const standaloneHours = document.querySelector(".bb-hours-input");
-  const standaloneMinutes = document.querySelector(".bb-minutes-input");
+  const standaloneSelect = document.querySelector(".standalone-tool-select");
+  const standalonePanel = document.querySelector(".standalone-tool-panel");
+  const standaloneHours = document.querySelector(".standalone-hours");
+  const standaloneMinutes = document.querySelector(".standalone-minutes");
 
   document
   .getElementById("addStandalone")
   ?.addEventListener("click", () => {
 
     const rows = document.querySelectorAll(
-      ".bb-tool-row"
+      ".standalone-calculator-row"
     );
 
     const lastRow = rows[rows.length - 1];
@@ -21,7 +21,7 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     addStandaloneRow(false);
-	  updateAddButton();
+	updateAddButton();
   });
 
   document
@@ -31,7 +31,7 @@ document.addEventListener("DOMContentLoaded", () => {
   // Close dropdowns when clicking away
   document.addEventListener("click", (e) => {
   if (standaloneSelect && standalonePanel) {
-    const isInside = e.target.closest(".bb-tool-dropdown");
+    const isInside = e.target.closest(".tool-dropdown");
 
     if (!isInside) {
       standalonePanel.classList.remove("open");
@@ -64,17 +64,17 @@ function isRowComplete(row) {
 
   const vibration =
     parseFloat(
-      row.querySelector(".bb-vibration-input")?.value
+      row.querySelector(".standalone-vibration")?.value
     ) || 0;
 
   const hours =
     parseFloat(
-      row.querySelector(".bb-hours-input")?.value
+      row.querySelector(".standalone-hours")?.value
     ) || 0;
 
   const minutes =
     parseFloat(
-      row.querySelector(".bb-minutes-input")?.value
+      row.querySelector(".standalone-minutes")?.value
     ) || 0;
 
   return (
@@ -93,7 +93,7 @@ function updateAddButton() {
   if (!btn || !wrapper) return;
 
   const rows = document.querySelectorAll(
-    ".bb-tool-row"
+    ".standalone-calculator-row"
   );
 
   const lastRow = rows[rows.length - 1];
@@ -136,11 +136,11 @@ function updateAddButton() {
 // #region ========== ADD ROW (STANDALONE) ==========
 function setupStandaloneRow(row, isInitial) {
 	 console.log("Setting up row:", row);
-  const select = row.querySelector(".bb-tool-select");
-  const panel = row.querySelector(".bb-tool-panel");
-  const hours = row.querySelector(".bb-hours-input");
-  const minutes = row.querySelector(".bb-minutes-input");
-  const vibration = row.querySelector(".bb-vibration-input");
+  const select = row.querySelector(".standalone-tool-select");
+  const panel = row.querySelector(".standalone-tool-panel");
+  const hours = row.querySelector(".standalone-hours");
+  const minutes = row.querySelector(".standalone-minutes");
+  const vibration = row.querySelector(".standalone-vibration");
   
   vibration.addEventListener("input", () => {
   calculateRow(row);
@@ -170,7 +170,7 @@ if (!isInitial) {
 
   const isOpen = panel.classList.contains("open");
 
-  document.querySelectorAll(".bb-tool-panel").forEach(p => {
+  document.querySelectorAll(".tool-panel").forEach(p => {
     p.classList.remove("open");
     p.style.display = "none";
   });
@@ -190,7 +190,7 @@ if (!isInitial) {
       calculateRow(row);
       updateOutput();
       updateBreakdown();
-	    updateAddButton();
+	  updateAddButton();
     });
   });
   
@@ -200,7 +200,7 @@ if (removeBtn) {
   removeBtn.addEventListener("click", () => {
 
     const rows = document.querySelectorAll(
-      ".bb-tool-row"
+      ".standalone-calculator-row"
     );
 
     if (rows.length <= 1) {
@@ -208,21 +208,21 @@ if (removeBtn) {
     }
 
     row.remove();
-	  updateDeleteButtons();
+	updateDeleteButtons();
     updateOutput();
     updateBreakdown();
-	  updateAddButton();
+	updateAddButton();
   });
 }
   
 }
 
 function addStandaloneRow(isInitial = false) {
-  const container = document.getElementById("bb-standalone-container");
+  const container = document.getElementById("standaloneContainer");
 console.log("addStandaloneRow called, isInitial =", isInitial);
   const templateId = isInitial
-    ? "bb-tool-template-full"
-    : "bb-tool-template-compact";
+    ? "standaloneToolTemplateFull"
+    : "standaloneToolTemplateCompact";
 
   console.log("readyState:", document.readyState);
   console.log("templateId:", templateId);
@@ -241,7 +241,7 @@ const clone = template.content.cloneNode(true);
 
   container.appendChild(clone);
 
-  const rows = container.querySelectorAll(".bb-tool-row");
+  const rows = container.querySelectorAll(".standalone-calculator-row");
   const newRow = rows[rows.length - 1];
 
   if (!isInitial) {
@@ -257,7 +257,7 @@ const clone = template.content.cloneNode(true);
 
 function updateDeleteButtons() {
   const rows = document.querySelectorAll(
-    ".bb-tool-row"
+    ".standalone-calculator-row"
   );
 
   rows.forEach(row => {
@@ -275,7 +275,7 @@ function updateDeleteButtons() {
 function resetAll() {
 
   const container =
-    document.getElementById("bb-standalone-container");
+    document.getElementById("standaloneContainer");
 
   if (!container) return;
 
@@ -359,8 +359,8 @@ opt.addEventListener("click", e => {
 
   if (!customName) return;
 
-  const label = row.querySelector(".bb-tool-select");
-  const vibration = row.querySelector(".bb-vibration");
+  const label = row.querySelector(".standalone-tool-select");
+  const vibration = row.querySelector(".standalone-vibration");
 
   label.textContent = customName;
 
@@ -392,7 +392,7 @@ opt.addEventListener("click", e => {
       const mfrDisplay = (mfr || "").trim(); // EXACT CASE
 
       const mfrHeader = document.createElement("div");
-      mfrHeader.className = "bb-tool-heading";
+      mfrHeader.className = "tool-heading";
       mfrHeader.dataset.manufacturer = mfrDisplay;
 
 	const textSpan = document.createElement("span");
@@ -402,7 +402,7 @@ opt.addEventListener("click", e => {
 	mfrHeader.appendChild(textSpan);
 	
 	const img = document.createElement("img");
-	img.className = "bb-manufacturer-logo";
+	img.className = "manufacturer-logo";
 	img.alt = mfrDisplay;
 	img.src = `./Assets/Logos/${mfrDisplay}.svg`;
 	img.loading = "eager";
@@ -444,10 +444,10 @@ opt.addEventListener("click", e => {
                 e.preventDefault();
                 e.stopPropagation();
 
-                const label = row.querySelector(".bb-tool-select");
+                const label = row.querySelector(".standalone-tool-select");
                 if (label) label.textContent = tool.name;
 
-const vibration = row.querySelector(".bb-vibration-input");
+const vibration = row.querySelector(".standalone-vibration");
 const magnitude = tool.vibration || tool.magnitude || 0;
 
 row.dataset.toolName = tool.name;
@@ -487,10 +487,10 @@ function calculateRow(row) {
 
     // Read standalone inputs
     mag = parseFloat(
-  row.querySelector(".bb-vibration-input")?.value
+  row.querySelector(".standalone-vibration")?.value
 ) || 0;
-    h = parseFloat(row.querySelector(".bb-hours-input")?.value) || 0;
-    m = parseFloat(row.querySelector(".bb-minutes-input")?.value) || 0;
+    h = parseFloat(row.querySelector(".standalone-hours")?.value) || 0;
+    m = parseFloat(row.querySelector(".standalone-minutes")?.value) || 0;
 
 
   const totalMinutes = (h * 60) + m;
@@ -607,7 +607,7 @@ function updateOutput() {
   let totalMinutes = 0;
 
 const queryRows = Array.from(
-    document.querySelectorAll(".bb-tool-row")
+    document.querySelectorAll(".standalone-calculator-row")
 );
 
   queryRows.forEach(row => {
@@ -742,12 +742,12 @@ function updateBreakdown() {
 
   if (!wrapper || !container) return;
 
-  container.innerHTML = ' <label class="input-group-text text-bold bb-section-header">PER-TOOL BREAKDOWN</label>';
+  container.innerHTML = ' <label class="input-group-text text-bold section-header mb-3">PER-TOOL BREAKDOWN</label>';
 
   let hasData = false;
 
 const queryRows = Array.from(
-    document.querySelectorAll(".bb-tool-row")
+    document.querySelectorAll(".standalone-calculator-row")
 );
 
   queryRows.forEach(row => {
@@ -790,9 +790,9 @@ const queryRows = Array.from(
     let h = 0;
     let m = 0;
 
-      mag = parseFloat(row.querySelector(".bb-vibration-input")?.value) || 0;
-      h = parseFloat(row.querySelector(".bb-hours-input")?.value) || 0;
-      m = parseFloat(row.querySelector(".bb-minutes-input")?.value) || 0;
+      mag = parseFloat(row.querySelector(".standalone-vibration")?.value) || 0;
+      h = parseFloat(row.querySelector(".standalone-hours")?.value) || 0;
+      m = parseFloat(row.querySelector(".standalone-minutes")?.value) || 0;
       
       const totalMins = (h * 60) + m;
       pts = mag > 0 && totalMins > 0 ? (2 * Math.pow(mag, 2) * (totalMins / 60)) : 0;
@@ -890,7 +890,7 @@ function getIncompleteReason(row) {
 
   const vibration =
     parseFloat(
-      row.querySelector(".bb-vibration-input")?.value
+      row.querySelector(".standalone-vibration")?.value
     ) || 0;
 
   if (vibration <= 0) {
@@ -899,12 +899,12 @@ function getIncompleteReason(row) {
 
   const hours =
     parseFloat(
-      row.querySelector(".bb-hours-input")?.value
+      row.querySelector(".standalone-hours")?.value
     ) || 0;
 
   const minutes =
     parseFloat(
-      row.querySelector(".bb-minutes-input")?.value
+      row.querySelector(".standalone-minutes")?.value
     ) || 0;
 
   if ((hours + minutes) <= 0) {
