@@ -385,12 +385,47 @@ input[class="magnitude"],input[class="hours"],input[class="minutes"],select {
 }
 /* #endregion */
 
-@media print {
+.bb-report-page-subtitle {
+  margin: 0;
+  color:var(--Matt_Graphite);
+  font-weight: 200;
+  font-size: 1.37em;
+}
+.bb-report-header-container {
+  background: var(--White);
+}
+
+.bb-report-rectangle {
+  width:10px;
+  height:70px;
+  margin-top: 20px;
+  margin-left: 20px;
+  margin-bottom: 20px;
+  background: var(--Vivid_Cerulean);
+}
+.bb-report-logo {
+  max-width:90%;
+  max-height:100%;
+  margin-top: 15px;
+  padding-right: 15px;
+  content: var(--bblogo_main);
+}
+.bb-report-logo-container {
+ height:80px;
+ object-fit: cover;
+}
+.pdfResultIcon {
+  width: 10px;
+  height: 10px;
+  object-fit: contain;
+  display: block;
+}
+/*@media print {
     #Navigation, #Page_Header, #Popup_Buttons, #Data_Entry, #Standalone_Table, #Table_Buttons, #Result, #Breakdown {
         display: none !important;
     }
 
-  }
+  }*/
 
 
 

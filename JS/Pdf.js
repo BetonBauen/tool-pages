@@ -18,31 +18,35 @@ function generatePdfReport() {
 
     //window.print();
 
-requestAnimationFrame(() => {
-    requestAnimationFrame(() => {
-html2canvas: {
-  useCORS: true
-}
-        html2pdf()
-            .set({
-                filename: "HAVS Report.pdf",
-                margin: 0,
-                html2canvas: {
-                    scale: 2,
-                    useCORS: true
-                },
-                jsPDF: {
-                    unit: "mm",
-                    format: "a4",
-                    orientation: "portrait"
-                }
-            })
-            
-            .from(document.getElementById("pdfReport"))
-            .save();
 
-    });
-});
+//alert("timeout expired");
+
+var element = document.getElementById('pdfReport');
+var opt = {
+    
+  allowTaint: true,
+  useCORS: true,
+  margin: 0,
+  filename: 'testdoc.pdf',
+  //image: { type: 'jpeg', quality: 0.98 },
+  html2canvas: { 
+    scale: 2, 
+    useCORS: true // Enable CORS to load remote images
+  },
+  jsPDF: { unit: 'mm', format: 'a4', orientation: 'portrait' }
+};
+setTimeOut(() => {
+    alert("test");
+    html2pdf().set(opt).from(element).save()
+}, 500)
+//html2pdf().set(opt).from(element).save();
+
+
+
+};
+
+
+
 
 function populatePdfReport() {
 
@@ -164,4 +168,4 @@ if (dateValue) {
         targetIcon.innerHTML = sourceIcon.innerHTML;
     }
 
-}}
+}

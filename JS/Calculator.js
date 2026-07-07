@@ -704,11 +704,11 @@ const queryRows = Array.from(
   };
 
   const icons = {
-    safe: "./Assets/Icons/Status/Safe.svg",
-    caution: "./Assets/Icons/Status/Caution.svg",
-    warning: "./Assets/Icons/Status/Warning.svg",
-    alert: "./Assets/Icons/Status/Alert.svg",
-    danger: "./Assets/Icons/Status/Danger.svg"
+    safe: "https://raw.githubusercontent.com/ChrisAndrewsBB/tool-pages/refs/heads/testing/Assets/Icons/Status/Safe.svg",
+    caution: "https://raw.githubusercontent.com/ChrisAndrewsBB/tool-pages/refs/heads/testing/Assets/Icons/Status/Caution.svg",
+    warning: "https://raw.githubusercontent.com/ChrisAndrewsBB/tool-pages/refs/heads/testing/Assets/Icons/Status/Warning.svg",
+    alert: "https://raw.githubusercontent.com/ChrisAndrewsBB/tool-pages/refs/heads/testing/Assets/Icons/Status/Alert.svg",
+    danger: "https://raw.githubusercontent.com/ChrisAndrewsBB/tool-pages/refs/heads/testing/Assets/Icons/Status/Danger.svg"
   };
 
   icon.innerHTML = `

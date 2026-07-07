@@ -194,7 +194,7 @@
       </div>
     </div>
   </section>
-  <!-- Data entry -->
+  <!-- Work Details -->
   <section id="Data Entry">
     <div></div>
     <div></div>
@@ -229,30 +229,27 @@
       </div>
     </div>
   </section>
+  <!-- Tool Data -->
   <section id="StandaloneTable">
     <div class="container-fluid bb-table mt-4 mb-4">
       <span class="input-group-text text-bold section-header mb-3">TOOL DATA</span>
         <template id="standaloneToolTemplateFull">
           <div class="standalone-calculator-row" data-tool-name="" data-magnitude="0">
             <div class="row align-items-end g-2 gy-0">
-              <div class="col-md-5 position-relative pt-0 mt-0">
+              <div class="col-5 position-relative pt-0 mt-0">
                 <div class="tool-status-indicator"></div>
                 <div class="tool-dropdown">
-                  <!--<label class="text-muted compact-label">Tool selection</label>-->
                   <div class="standalone-tool-select tool-selected form-select text-start py-2" style="cursor: pointer; min-height: 38px;">Select tool</div>
                   <div class="standalone-tool-panel tool-panel border rounded shadow-lg mt-1 bg-white" style="display:none; position:absolute; top:100%; left:0; width:100%; z-index:1060; max-height:250px; overflow-y:auto;"></div>
                 </div>
               </div>
-              <div class="col-6 col-md-2 pt-0 mt-0">
-                <!--<label class="text-muted compact-label">Vibration Magnitude</label>-->
+              <div class="col-2 col-md-2 pt-0 mt-0">
                 <input class="standalone-vibration vibration form-control text-center" type="number" min="0" max="12">
               </div>
-              <div class="col-6 col-md-2 pt-0 mt-0">
-                <!--<label class="text-muted compact-label">Hours used</label>-->
+              <div class="col-2 col-md-2 pt-0 mt-0">
                   <input class="standalone-hours hours form-control text-center" type="number" min="0" max="12">
               </div>
-              <div class="col-6 col-md-2 pt-0 mt-0">
-                <!-- <label class="text-muted compact-label">Minutes used</label>-->
+              <div class="col-2 col-md-2 pt-0 mt-0">
                 <input class="standalone-minutes minutes form-control text-center" type="number" min="0" max="59">
               </div>
               <div class="remove-wrap col-1">
@@ -266,23 +263,23 @@
         <template id="standaloneToolTemplateCompact">
           <div class="standalone-calculator-row compact" data-tool-name="" data-magnitude="0">
             <div class="row align-items-end g-2 gy-0">
-              <div class="col-md-5 position-relative pt-0 mt-0">
+              <div class="col-5 position-relative pt-0 mt-0">
                 <div class="tool-status-indicator"></div>
                   <div class="tool-dropdown">
                     <div class="standalone-tool-select tool-selected form-select text-start py-2" style="cursor: pointer; min-height: 38px;">Select tool</div>
                     <div class="standalone-tool-panel tool-panel border rounded shadow-lg mt-1 bg-white" style="display:none; position:absolute; top:100%; left:0; width:100%; z-index:1060; max-height:250px; overflow-y:auto;"></div>
                   </div>
               </div>
-              <div class="col-6 col-md-2 pt-0 mt-0">
+              <div class="col-2 col-2 pt-0 mt-0">
                 <input class="standalone-vibration vibration form-control text-center" type="number" min="0" max="12">
               </div>
-              <div class="col-6 col-md-2 pt-0 mt-0">
+              <div class="col-2 col-2 pt-0 mt-0">
                 <input class="standalone-hours hours form-control text-center" type="number" min="0" max="12">
               </div>
-              <div class="col-6 col-md-2 pt-0 mt-0">
+              <div class="col-2 col-2 pt-0 mt-0">
                 <input class="standalone-minutes minutes form-control text-center" type="number" min="0" max="59">
               </div>
-              <div class="remove-wrap col-md-1 pt-0 mt-0">
+              <div class="remove-wrap col-1 pt-0 mt-0">
                 <button type="button" class="btn px-0 btn-delete" data-role="remove-row">
                   <i class="bi bi-trash-fill fs-2" style="color:#999"></i>
                 </button>
@@ -292,10 +289,10 @@
           </div>
         </template>	
         <div class="row g-2 pb-2 tool-header-row">
-          <div class="col-md-5">Tool</div>
-          <div class="col-6 col-md-2">Vibration magnitude (m/s²)</div>
-          <div class="col-6 col-md-2">Hours used</div>
-          <div class="col-6 col-md-2">Minutes used</div>
+          <div class="col-md-5 text-bold">Tool</div>
+          <div class="col-6 col-md-2 text-bold">Vibration magnitude (m/s²)</div>
+          <div class="col-6 col-md-2 text-bold">Hours used</div>
+          <div class="col-6 col-md-2 text-bold">Minutes used</div>
           <div class="remove-wrap col-md-1 pt-0 mt-0"></div>
 		</div>
 		<div id="standaloneContainer"></div>
@@ -344,173 +341,8 @@
       </div> 
 	</div>
   </section>
-
-
-
-<!-- <section>
-    <div class="container">
-      <div class="row">
-        <div class="col-lg-12 mb-4 mt-2 text-center">
-          <h2>ABOUT US</h2>
-        </div>
-      </div>
-    </div>
-    <div class="container ">
-      <div class="row">
-        <div class="col-lg-4 col-md-6 col-sm-12 text-center">
-          <img class="rounded-circle" alt="140x140" style="width: 140px; height: 140px;" src="images/140X140.gif"
-            data-holder-rendered="true">
-          <h3>Lorem ipsum</h3>
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.</p>
-        </div>
-        <div class="col-lg-4 col-md-6 col-sm-12 text-center">
-          <img class="rounded-circle" alt="140x140" style="width: 140px; height: 140px;" src="images/140X140.gif"
-            data-holder-rendered="true">
-          <h3>Lorem ipsum dolor</h3>
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.</p>
-        </div>
-        <div class="col-lg-4 col-md-6 col-sm-12 text-center">
-          <img class="rounded-circle" alt="140x140" style="width: 140px; height: 140px;" src="images/140X140.gif"
-            data-holder-rendered="true">
-          <h3>Lorem ipsum dolor</h3>
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.</p>
-        </div>
-        <div class="col-lg-4 col-md-6 col-sm-12 text-center">
-          <img class="rounded-circle" alt="140x140" style="width: 140px; height: 140px;" src="images/140X140.gif"
-            data-holder-rendered="true">
-          <h3>Lorem ipsum</h3>
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.</p>
-        </div>
-        <div class="col-lg-4 col-md-6 col-sm-12 text-center">
-          <img class="rounded-circle" alt="140x140" style="width: 140px; height: 140px;" src="images/140X140.gif"
-            data-holder-rendered="true">
-          <h3>Lorem ipsum dolor</h3>
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.</p>
-        </div>
-        <div class="col-lg-4 col-md-6 col-sm-12 text-center">
-          <img class="rounded-circle" alt="140x140" style="width: 140px; height: 140px;" src="images/140X140.gif"
-            data-holder-rendered="true">
-          <h3>Lorem ipsum</h3>
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.</p>
-        </div>
-      </div>
-      <div class="row">
-        <div class="col-sm-12 mt-4 mb-2 text-center">
-          <h2>TESTIMONIALS</h2>
-        </div>
-      </div>
-      <div class="row">
-        <div class="col-sm-6 col-lg-6">
-          <blockquote class="blockquote">
-            <p class="mb-0">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.</p>
-            <small class="blockquote-footer">Someone famous in <cite title="Source Title">Source Title</cite></small>
-          </blockquote>
-        </div>
-        <div class="col-sm-6 col-lg-6">
-          <blockquote class="blockquote">
-            <p class="mb-0">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.</p>
-            <small class="blockquote-footer">Someone famous in <cite title="Source Title">Source Title</cite></small>
-          </blockquote>
-        </div>
-        <div class="col-sm-6 col-lg-6">
-          <blockquote class="blockquote">
-            <p class="mb-0">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.</p>
-            <small class="blockquote-footer">Someone famous in <cite title="Source Title">Source Title</cite></small>
-          </blockquote>
-        </div>
-        <div class="col-sm-6 col-lg-6">
-          <blockquote class="blockquote">
-            <p class="mb-0">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.</p>
-            <small class="blockquote-footer">Someone famous in <cite title="Source Title">Source Title</cite></small>
-          </blockquote>
-        </div>
-      </div>
-    </div>
-    <div class="bg-light p-5 rounded-3">
-      <div class="container">
-        <div class="row">
-          <div class="text-center col-md-8 col-12 mx-auto">
-            <p class="lead">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tempore, praesentium, autem, veritatis error quidem eos fuga atque asperiores magnam deleniti necessitatibus sequi</p>
-          </div>
-        </div>
-        <div class="row">
-          <div class="col-sm-4 mx-auto"> <a class="btn btn-success btn-lg d-block w-100" href="#" title="">Sign up now!</a> </div>
-        </div>
-      </div>
-    </div>
-    <div class="container">
-      <div class="row">
-        <div class="col-12 mb-2 text-center">
-          <h2>OUR SERVICES</h2>
-        </div>
-      </div>
-      <div class="row">
-        <div class="col-sm-6 col-lg-4">
-          <h3>Feature Description</h3>
-          <p> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt impedit est voluptatem doloremque architecto corporis suscipit quidem ratione! Quis laborum nam optio dolorem doloremque ex nobis quibusdam ad quo dolores? </p>
-          <p><a class="btn btn-link" href="http://www.adobe.com">View details »</a></p>
-        </div>
-        <div class="col-sm-6 col-lg-4">
-          <h3>Feature Description</h3>
-          <p> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptate, illo, libero esse assumenda culpa consequatur exercitationem beatae odio praesentium nihil iste ipsum reiciendis pariatur. Recusandae, reiciendis quidem eaque aut ab. </p>
-          <p><a class="btn btn-link" href="http://www.adobe.com">View details »</a></p>
-        </div>
-        <div class="col-sm-6 col-lg-4">
-          <h3>Feature Description</h3>
-          <p> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Blanditiis, adipisci recusandae veniam laudantium distinctio temporibus eveniet dolorum earum iusto veritatis provident ducimus minima dolore quas vel omnis cumque voluptas quibusdam.</p>
-          <p><a class="btn btn-link" href="http://www.adobe.com">View details »</a></p>
-        </div>
-        <div class="col-sm-6 col-lg-4">
-          <h3>Feature Description</h3>
-          <p> <em class="icon-desktop "></em> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Unde, earum rem nostrum provident repellat inventore laborum deleniti quas facere Quasi impedit autem qui cupiditate modi vero vitae dolorum nisi explicabo ea dolores animi. Inventore, omnis.</p>
-          <p><a class="btn btn-link" href="http://www.adobe.com">View details »</a></p>
-        </div>
-        <div class="col-sm-6 col-lg-4">
-          <h3>Feature Description</h3>
-          <p> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Similique, iure, perspiciatis, ab ad quia animi esse repudiandae tempore quisquam dolorem sequi voluptatum qui fugiat. Quasi impedit autem qui cupiditate iusto?</p>
-          <p><a class="btn btn-link" href="http://www.adobe.com">View details »</a></p>
-        </div>
-        <div class="col-sm-6 col-lg-4">
-          <h3>Feature Description</h3>
-          <p> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quia, aut, hic laudantium reprehenderit sapiente nemo consequatur corrupti accusantium! Hic, non rerum nihil reprehenderit excepturi explicabo error tempore aliquam eveniet odit.</p>
-          <p><a class="btn btn-link" href="http://www.adobe.com">View details »</a></p>
-        </div>
-      </div>
-    </div>
-  </section>
-  <div class="container">
-    <div class="row">
-      <div class="col-12 col-md-8 mx-auto">
-        <div class="bg-light p-5 rounded-3">
-          <div class="row text-center">
-            <div class="col-12">
-              <h2>Request a free quote</h2>
-            </div>
-            <div class="col-12">
-              <form id="feedbackForm" class="text-center">
-                <div class="form-floating mb-3">
-                  <input type="text" class="form-control" id="name" name="name" placeholder="Name" aria-describedby="nameHelp">
-                  <label for="name">Name</label>
-                </div>
-                <div id="nameHelp" class="form-text text-muted" style="display: none;">Please enter your name.</div>
-                <div class="form-floating mb-3">
-                  <input type="email" class="form-control" id="email" name="email" placeholder="Email Address" aria-describedby="emailHelp">
-                  <label for="email">E-Mail</label>
-                </div>
-                <div id="emailHelp" class="form-text text-muted" style="display: none;">Please enter a valid e-mail address.</div>
-                <div class="form-floating mb-3">
-                  <textarea class="form-control" id="message" name="message" placeholder="Message" style="height: 200px;" aria-describedby="messageHelp"></textarea>
-                  <label for="message">Message</label>
-                </div>
-                <div id="messageHelp" class="form-text text-muted" style="display: none;">Please enter a message.</div>
-                <button type="submit" id="feedbackSubmit" class="btn btn-primary btn-lg">Send</button>
-              </form>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>-->
+  <!-- Footer -->
+  <section id="Footer">
   <!--<footer class="text-center mt-auto" style="background: #f2f2f2; height: 120px; position: absolute; bottom: 0; left:0; width: 100%;">
     <div class="container mt-auto">
       <div class="row mt-auto">
@@ -520,8 +352,11 @@
       </div>
     </div>
   </footer>-->
+  </section>
 
-<div id="pdfReport" class="pdf-report">
+  <!-- Report -->
+<section id="Report">
+<div id="pdfReport" class="pdf-report pe-3">
 
     <!-- Header -->
 <section id="Report Header">
@@ -529,14 +364,14 @@
       <div class="container-fluid bb-header-container">
         <div class="row">
           <div class="col-auto g-0" id="Report_Blue_Bar_Column">
-            <div class="bb-rectangle"></div>
+            <div class="bb-report-rectangle"></div>
           </div>
-          <div class="col bb-page-title-container" id="Report_Title_Column">
+          <div class="col-auto bb-page-title-container" id="Report_Title_Column">
             <h1 class="bb-page-title">BETON BAUEN</h1>
             <h2 class="bb-report-page-subtitle">HAND-ARM VIBRATION MONITORING</h2>
           </div>
-          <div class="col bb-logo-container" id="report_Logo_Column">
-              <img class="bb-logo float-end" alt="Betonbauen logo"/>
+          <div class="col bb-report-logo-container" id="report_Logo_Column">
+              <img src="https://raw.githubusercontent.com/ChrisAndrewsBB/tool-pages/refs/heads/testing/Assets/Logos/BetonBauenLogo_20.png" class="bb-report-logo float-end" alt="Betonbauen logo"/>
           </div>		
         </div>
       </div>
@@ -623,15 +458,16 @@
         <div id="pdfAction" class="result-action"></div>
 
     </div>
+ 
 	</div>
 	
-	
+
  
 
     
 
 </div>
-
+  </section>
 
 
   <!-- Include all compiled plugins (below), or include individual files as needed -->

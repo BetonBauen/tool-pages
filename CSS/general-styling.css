@@ -1,8 +1,8 @@
 /* #region DECLARATIONS */
 :root { 
   /* #region Logos */
-  --bblogo_main: url('../Assets/Logos/BetonBauenLogo_20.png');
-  --bblogo_pride:url('../Assets/Logos/BetonBauenLogo_20_Pride.png');
+  --bblogo_main: url('https://raw.githubusercontent.com/ChrisAndrewsBB/tool-pages/refs/heads/testing/Assets/Logos/BetonBauenLogo_20.png');
+  --bblogo_pride:url('https://raw.githubusercontent.com/ChrisAndrewsBB/tool-pages/refs/heads/testing/Assets/Logos/BetonBauenLogo_20_Pride.png');
   /*#endregion*/
   /* #region Icons */
   --bblogo_shortcut: url('../Assets/Logos/BetonBauenLogo.svg');
@@ -115,9 +115,7 @@ h2 {
   box-shadow: 0px 5px 5px rgb(26 26 26 / 5%);
   background: var(--White);
 }
-.bb-report-header-container {
-  background: var(--White);
-}
+
 .bb-rectangle {
   width:10px;
   height:80px;
@@ -127,7 +125,8 @@ h2 {
   background: var(--Vivid_Cerulean);
 }
 .bb-page-title-container {
-  padding-left: 20px;
+  padding-left: 15px;
+  padding-top: 0.25rem ;
 }
 .bb-page-title {
   margin-top:15px;
@@ -252,3 +251,11 @@ color: var(--White);
   padding: 6px 10px;
   background: #f5f5f5;
 }
+/* #region SECTION HEADERS */
+.section-header {
+background-color: #1b2a41 !important;
+color: var(--White);
+}
+/* #endregion */
+
+
