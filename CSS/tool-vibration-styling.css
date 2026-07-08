@@ -324,7 +324,7 @@ input[class="magnitude"],input[class="hours"],input[class="minutes"],select {
 .result-status-icon {
   width: 48px;
   height: 48px;
-  object-fit: contain;
+  object-fit: scale-down;
   display: block;
 }
 /* #endregion */
@@ -389,7 +389,7 @@ input[class="magnitude"],input[class="hours"],input[class="minutes"],select {
   margin: 0;
   color:var(--Matt_Graphite);
   font-weight: 200;
-  font-size: 1.37em;
+  font-size: 1.4em; /*1.37em;*/
 }
 .bb-report-header-container {
   background: var(--White);
@@ -427,6 +427,8 @@ input[class="magnitude"],input[class="hours"],input[class="minutes"],select {
 
   }*/
 
-
+.pdf-Report{
+  width: 794px;
+}
 
 

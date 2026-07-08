@@ -704,7 +704,7 @@ const queryRows = Array.from(
   };
 
   const icons = {
-    safe: "https://raw.githubusercontent.com/ChrisAndrewsBB/tool-pages/refs/heads/testing/Assets/Icons/Status/Safe.svg",
+    safe: "https://raw.githubusercontent.com/ChrisAndrewsBB/tool-pages/refs/heads/testing/Assets/Icons/Status/Safe.png",
     caution: "https://raw.githubusercontent.com/ChrisAndrewsBB/tool-pages/refs/heads/testing/Assets/Icons/Status/Caution.svg",
     warning: "https://raw.githubusercontent.com/ChrisAndrewsBB/tool-pages/refs/heads/testing/Assets/Icons/Status/Warning.svg",
     alert: "https://raw.githubusercontent.com/ChrisAndrewsBB/tool-pages/refs/heads/testing/Assets/Icons/Status/Alert.svg",
