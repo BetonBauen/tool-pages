@@ -8,7 +8,7 @@
   <title>HAVS CALCULATOR | Beton Bauen Ltd</title>
   <!-- Stylesheets -->
   <link rel="stylesheet" href="CSS/bootstrap-5.3.8.css" > <!-- Import bootstrap stylesheet -->
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css"> <!-- Import bootstrap icons -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css"> <!-- Import bootstrap icons -->
   <link rel="stylesheet" href="CSS/general-styling.css" type="text/css"> <!-- Import base stylesheet -->
   <link rel="stylesheet" href="CSS/tool-vibration-styling.css" type="text/css"> <!-- Import tool vibration stylesheet -->
   <!-- Icons -->
@@ -22,7 +22,7 @@
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" ><!-- Import Roboto font family -->
 </head>
 <!-- Page body -->
-<body class="d-flex flex-column min-vh-100">
+<body class="d-flex flex-column" style="height: calc(100vh - 20px">
   <!-- Navigation -->
   <section id="Navigation">
   <nav class="navbar navbar-expand-lg navbar-dark bg-dark bb-nav px-3">
@@ -199,12 +199,12 @@
     <div></div>
     <div></div>
     <div class="container-fluid bb-table mt-4 mb-4">
-      <span class="input-group-text text-bold section-header mb-3">WORK DETAILS</span>
+      <span class="input-group-text text-bold section-header mb-3">EMPLOYEE / WORK DETAILS</span>
       <!-- Employee name -->	  
       <div id="Employee Name" class="row">
         <div class="col-auto">	
           <div class="input-group input-group-sm mb-2">
-            <span class="input-group-text bb-input-group-text" id="nameInput">EMPLOYEE NAME:</span>
+            <span class="input-group-text bb-input-group-text" id="nameInput">Name:</span>
               <input type="text" class="form-control text-lg-start" id="employeeName" placeholder="Name" aria-describedby="nameInput">
           </div>
         </div>
@@ -213,7 +213,7 @@
       <div id="Site Name" class="row">
         <div class="col-auto">
           <div class="input-group input-group-sm mb-2">
-            <span class="input-group-text bb-input-group-text" id="locationInput">SITE / LOCATION:</span>
+            <span class="input-group-text bb-input-group-text" id="locationInput">Site / Location:</span>
             <input type="text" class="form-control text-lg-start" id="siteName" placeholder="Site / location" aria-describedby="locationInput">
           </div>      
         </div>
@@ -222,7 +222,7 @@
       <div id="Week" class="row">
         <div class="col-auto">
           <div class="input-group input-group-sm mb-2">
-            <span class="input-group-text bb-input-group-text" id="dateInput">DATE:</span>
+            <span class="input-group-text bb-input-group-text" id="dateInput">Date:</span>
             <input type="date" class="form-control text-lg-start" id="startDate" placeholder="dd/mm/yyyy" aria-describedby="dateInput">
           </div>      
         </div>
@@ -303,17 +303,17 @@
       <span id="addStandaloneWrapper" data-bs-toggle="tooltip" data-bs-placement="top">
         <button type="button" class="btn btn-addtool" id="addStandalone">
           <i class="bi bi-plus-lg"></i>
-          Add Tool
+          ‎ Add Tool
 		</button>	
       </span>
       <!--<button type="button" class="btn btn-clearrow" data-role="clear-all">Clear All</button>-->
       <button type="button" class="btn btn-reset" data-role="reset-all" id="resetall">
 		<i class="bi bi-arrow-clockwise"></i>
-		Reset
+		‎ Reset
       </button>
 		      <button type="button" class="btn btn-secondary" id="generatePdf">
-		<i class="bi bi-printer"></i>
-		Print
+		<i class="bi bi-floppy-fill"></i>
+		  ‎ Save
       </button>
 	</div> 
   </section>
@@ -342,8 +342,8 @@
 	</div>
   </section>
   <!-- Footer -->
-  <section id="Footer">
-  <!--<footer class="text-center mt-auto" style="background: #f2f2f2; height: 120px; position: absolute; bottom: 0; left:0; width: 100%;">
+  <!--<section id="Footer">
+  <footer class="text-center mt-auto" style="background: #f2f2f2; height: 120px; bottom: 0; left:0; width: 100%;">
     <div class="container mt-auto">
       <div class="row mt-auto">
         <div class="col-12 mt-auto" >
@@ -351,8 +351,8 @@
         </div>
       </div>
     </div>
-  </footer>-->
-  </section>
+  </footer>
+  </section>-->
 
   <!-- Report -->
 <section id="Report">
@@ -382,12 +382,12 @@
     <div></div>
     <div></div>
     <div class="container-fluid bb-table mt-4 mb-4">
-      <span class="input-group-text text-bold section-header mb-3">WORK DETAILS</span>
+      <span class="input-group-text text-bold section-header mb-3">EMPLOYEE / WORK DETAILS</span>
       <!-- Employee name -->	  
       <div id="Report_Employee_Name" class="row">
         <div class="col-auto">	
           <div class="input-group input-group-sm mb-2">
-            <span class="input-group-text bb-input-group-text" id="ReportnameInput">EMPLOYEE NAME:</span>
+            <span class="input-group-text bb-input-group-text" id="ReportnameInput">Name:</span>
               <span id="pdfEmployee" class="form-control text-lg-start reportfield"></span>
           </div>
         </div>
@@ -396,7 +396,7 @@
       <div id="Repo_Site_Name" class="row">
         <div class="col-auto">
           <div class="input-group input-group-sm mb-2">
-            <span class="input-group-text bb-input-group-text" id="reportlocationInput">SITE / LOCATION:</span>
+            <span class="input-group-text bb-input-group-text" id="reportlocationInput">Site / Location:</span>
             <span id="pdfSite" class="form-control text-lg-start reportfield"></span>
           </div>      
         </div>
@@ -405,7 +405,7 @@
       <div id="Report_Date" class="row">
         <div class="col-auto">
           <div class="input-group input-group-sm mb-2">
-            <span class="input-group-text bb-input-group-text" id="reportdatetext">DATE:</span>
+            <span class="input-group-text bb-input-group-text" id="reportdatetext">Date:</span>
             <span id="pdfDate" class="form-control text-lg-start reportfield"></span>
           </div>      
         </div>
@@ -448,14 +448,14 @@
       <span id="report_results-heading" class="input-group-text d-none text-bold section-header mb-3">DAILY EXPOSURE SUMMARY</span>
 <div id="pdfResult" class="alert result">
 
-        <div class="result-header">
-            <span id="pdfResultIcon"></span>
+        <div class="result-header mb-2">
+            <span id="pdfResultIcon" class="result-icon"></span>
             <span id="pdfStatus" class="result-title"></span>
         </div>
 
-        <div id="pdfExposure" class="result-exposure"></div>
-        <div id="pdfDetail" class="result-detail"></div>
-        <div id="pdfAction" class="result-action"></div>
+        <div id="pdfExposure" class="result-exposure mb-1"></div>
+        <div id="pdfDetail" class="result-detail mb-1"></div>
+        <div id="pdfAction" class="result-action mb-1"></div>
 
     </div>
  
@@ -463,20 +463,30 @@
 	
 
  
+<img id="Icontest" src="https://raw.githubusercontent.com/ChrisAndrewsBB/tool-pages/refs/heads/testing/Assets/Icons/Status/Alert.svg" width="12px" height="12px">
+    <span>Lots and lots of text goes here excellent text worthy of chef excellence himself</span>
+    <section id="Footer2">
 
-    
+  <footer class="footer text-center mt-auto py-3" style="background: #ffffff; display: block;">
+    <div class="container mt-auto">
+          <p>Copyright © MyWebsite. All rights reserved.</p>
+    </div>
+  </footer>
 
-</div>
   </section>
-<!--<img id="Icontest" src="https://raw.githubusercontent.com/ChrisAndrewsBB/tool-pages/refs/heads/testing/Assets/Icons/Status/Alert.svg" width="48px" height="48px">-->
+  
+</div>
+
+  
+  </section>
+
 
   <!-- Include all compiled plugins (below), or include individual files as needed -->
   <script src="JS/popper-2.11.8.min.js"></script>
   <script src="JS/bootstrap-5.3.8.js"></script>
   <script src="JS/Tools.js"></script>
   <script src="JS/Calculator.js"></script>
-  <!--<script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js" integrity="sha512-GsLlZN/3F2ErC5ifS5QtgpiJtWd43JWSuIgh7mbzZ8zBps+dvLusV+eNQATqgA/HdeKFVgA5v3S/cIrLF7QnIg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>-->
-  <script src="https://cdn.jsdelivr.net/npm/dompdf.js@latest/dist/dompdf.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.14.0/html2pdf.bundle.min.js" integrity="sha512-IgpImqjrCPtoJXRBavoYDDfWTnz8lBuklWs9yRsDRwC37l4XXH5KJDSqq108swbqMaWg+5UEZUFwpJhgD+QC7g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
   <script src="JS/Pdf.js"></script>
 
 

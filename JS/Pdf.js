@@ -140,19 +140,17 @@ var opt = {
   allowTaint: true,
   useCORS: true,
   margin: 0,
-  filename: 'testdoc.pdf',
+  filename: 'testingpdf.pdf',
   image: { type: 'jpeg', quality: 0.98 },
- html2canvas: { 
-    scale: 2, 
-   useCORS: true, // Enable CORS to load remote images
-
-removeContainer: true
-
-
+ html2canvas: { scale: 2, useCORS: true, removeContainer: true},
+ pagebreak: { mode: ['avoid-all', 'css', 'legacy'] },
+  jsPDF: { unit: 'mm', format: 'a4', orientation: 'portrait', compressPDF: true 
   },
-  jsPDF: { unit: 'mm', format: 'a4', orientation: 'portrait' }
 };
 
-html2pdf().set(opt).from(element).save();
 
+
+html2pdf().set(opt).from(element).save();
 }
+
+
