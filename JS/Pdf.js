@@ -19,10 +19,6 @@ function generatePdfReport() {
     //window.print();
  //setTimeout(savePdfReport,5000);
 
-
-
-
-
 };
 
 
@@ -42,9 +38,8 @@ function populatePdfReport() {
 
     if (dateValue) {
         const [year, month, day] = dateValue.split("-");
-        document.getElementById("pdfDate").textContent =
-            `${day}/${month}/${year}`;
-            console.log("pdfDate")
+        document.getElementById("pdfDate").textContent = `${day}/${month}/${year}`;
+        console.log("pdfDate")
     } else {
         document.getElementById("pdfDate").textContent = "";
     }
@@ -117,7 +112,6 @@ function populatePdfReport() {
 
     pdfResult.className = output.className;
 
-
     // Copy status icon if present
 
     const sourceIcon = document.getElementById("result-icon");
@@ -135,22 +129,51 @@ function savePdfReport() {
 //alert("timeout expired");
 
 var element = document.getElementById('pdfReport');
-var opt = {
-    
-  allowTaint: true,
-  useCORS: true,
-  margin: 0,
-  filename: 'testingpdf.pdf',
-  image: { type: 'jpeg', quality: 0.98 },
- html2canvas: { scale: 2, useCORS: true, removeContainer: true},
- pagebreak: { mode: ['avoid-all', 'css', 'legacy'] },
-  jsPDF: { unit: 'mm', format: 'a4', orientation: 'portrait', compressPDF: true 
-  },
-};
+//var opt = {
+//  allowTaint: true,
+//  useCORS: true,
+//  margin: 0,
+//  filename: 'testingpdf.pdf',
+//  image: { type: 'jpeg', quality: 0.98 },
+// html2canvas: { scale: 2, useCORS: true, removeContainer: true},
+// pagebreak: { mode: ['avoid-all', 'css', 'legacy'] },
+//  jsPDF: { unit: 'mm', format: 'a4', orientation: 'portrait', compressPDF: true 
+//  },
+//};
+const date = new Date();
 
+let day = date.getDate();
+let month = date.getMonth() + 1;
+let year = date.getFullYear();
+let currentDate = `${day}-${month}-${year}`;
+html2pdf()
+    .from(element)
+    .set({
+        //top, left, bottom, right
+        margin:       [2, 1, 2, 1],
+        allowTaint: true,
+        useCORS: true,
+        filename:     'Hand Arm Vibration Monitoring ' + pdfEmployee.textContent + ' ' + currentDate,
+        image:        { type: 'jpeg',quality: 0.98 },
+        html2canvas:  { scale: 2, logging: true, dpi: 192, letterRendering: true, useCORS: true, removeContainer: true },
+        jsPDF:        { unit: 'mm', format: 'a4', orientation: 'p' },
+        pagebreak: { before: '.page-break', avoid: 'table' }
+        })
+    .toPdf()
+    .get('pdf').then(function (pdf) {
+        var totalPages = pdf.internal.getNumberOfPages();
+        for (let i = 1; i <= totalPages; i++) {
+            pdf.setPage(i);
+            pdf.setFontSize(9);
+            pdf.setTextColor('#3e3e3e');
+            pdf.text('HS&E 14 | Hand Arm Vibration Monitoring - Revision 3 - 10/07/2026 ', pdf.internal.pageSize.getWidth() - 205, pdf.internal.pageSize.getHeight() - 8);
+            pdf.text('Page ' + i + '/' + totalPages+'', pdf.internal.pageSize.getWidth() - 18, pdf.internal.pageSize.getHeight() - 8);
+            pdf.setTextColor('#00b0f0');
+            pdf.text('|', pdf.internal.pageSize.getWidth() - 191.1, pdf.internal.pageSize.getHeight() - 8);
+          } 
+    }).save();
 
-
-html2pdf().set(opt).from(element).save();
+//html2pdf().set(opt).from(element).save();
 }
 
 

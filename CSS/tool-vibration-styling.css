@@ -372,7 +372,7 @@ input[class="magnitude"],input[class="hours"],input[class="minutes"],select {
 
 /* #region REPORT */
 .reportfield {
-	width: 585px !important;
+	width: 577px !important;
 }
 .bbformfield {
 	  background-color: #39668f;
@@ -407,11 +407,11 @@ input[class="magnitude"],input[class="hours"],input[class="minutes"],select {
   max-width:90%;
   max-height:100%;
   margin-top: 15px;
-  padding-right: 15px;
-  content: var(--bblogo_main);
+  /*padding-right: 15px;
+  content: var(--bblogo_main);*/
 }
 .bb-report-logo-container {
- height:80px;
+ height:90px;
  object-fit: cover;
 }
 .pdfResultIcon {
@@ -427,8 +427,6 @@ input[class="magnitude"],input[class="hours"],input[class="minutes"],select {
 
   }*/
 
-.pdf-Report{
-  width: 794px;
-}
+
 
 
