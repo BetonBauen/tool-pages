@@ -166,7 +166,7 @@ html2pdf()
             pdf.setTextColor('#00b0f0');
             pdf.text('|', pdf.internal.pageSize.getWidth() - 191.1, pdf.internal.pageSize.getHeight() - 8);
             pdf.setTextColor('#ff0055');
-            pdf.text('Header Start', pdf.internal.pageSize.getWidth() - 203.89, pdf.internal.pageSize.getHeight() - 287.5);
+            //pdf.text('Header Start', pdf.internal.pageSize.getWidth() - 203.89, pdf.internal.pageSize.getHeight() - 287.5);
             //pdf.addImage(test, pdf.internal.pageSize.getWidth() - 203.89, pdf.internal.pageSize.getHeight() - 287.5);
           } 
     })
