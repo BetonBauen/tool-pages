@@ -111,8 +111,9 @@ function populatePdfReport() {
     const output = document.getElementById("output");
 
     const pdfResult = document.getElementById("pdfResult");
-
+    pdfResult.innerHTML = output.innerHTML;
     pdfResult.className = output.className;
+    pdfResult.classList.remove("visible");
 
     const sourceIcon = document.getElementById("result-icon");
 
