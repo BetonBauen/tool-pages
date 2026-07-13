@@ -311,9 +311,9 @@
 		<i class="bi bi-arrow-clockwise"></i>
 		‎ Reset
       </button>
-		      <button type="button" class="btn btn-secondary" id="generatePdf">
-		<i class="bi bi-floppy-fill"></i>
-		  ‎ Save
+		      <button type="button" class="btn btn-secondary" id="generatePdf" >
+		<i id="saveIcon" class="bi bi-floppy-fill"></i>
+            <label id="btnText">‎ Save</label>
       </button>
 	</div> 
   </section>
@@ -356,13 +356,14 @@
 
   <!-- Report -->
 <section id="Report">
+  <div class="ReportWrapper">
 <div id="pdfReport" class="pdf-report pe-3">
 
     <!-- Header -->
 <section id="Report Header">
     <header>
       
-      <div class="container-fluid bb-header-container">
+      <div class="container-fluid bb-header-container" id="mainHeader">
         <div class="row">
           <div class="col-auto g-0" id="Report_Blue_Bar_Column">
             <div class="bb-report-rectangle"></div>
@@ -472,10 +473,10 @@
   </footer>
 
   </section>-->
-  
+
 </div>
 
-  
+  </div>
   </section>
 
 
@@ -485,6 +486,7 @@
   <script src="JS/Tools.js"></script>
   <script src="JS/Calculator.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.14.0/html2pdf.bundle.min.js" integrity="sha512-IgpImqjrCPtoJXRBavoYDDfWTnz8lBuklWs9yRsDRwC37l4XXH5KJDSqq108swbqMaWg+5UEZUFwpJhgD+QC7g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <script src="JS/html2canvas.min.js"></script>
   <script src="JS/Pdf.js"></script>
 
 

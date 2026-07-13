@@ -20,7 +20,7 @@ document.addEventListener("DOMContentLoaded", () => {
       return;
     }
 
-    addStandaloneRow(false);
+  addStandaloneRow(false);
 	updateAddButton();
   });
 
@@ -54,88 +54,50 @@ document.addEventListener("DOMContentLoaded", () => {
   updateDeleteButtons();
 });
 
-//// #endregion
-
-
 function isRowComplete(row) {
   if (!row) return false;
 
   const toolName = row.dataset.toolName;
+  const vibration = parseFloat( row.querySelector(".standalone-vibration")?.value ) || 0;
+  const hours = parseFloat( row.querySelector(".standalone-hours")?.value ) || 0;
+  const minutes = parseFloat( row.querySelector(".standalone-minutes")?.value ) || 0;
 
-  const vibration =
-    parseFloat(
-      row.querySelector(".standalone-vibration")?.value
-    ) || 0;
-
-  const hours =
-    parseFloat(
-      row.querySelector(".standalone-hours")?.value
-    ) || 0;
-
-  const minutes =
-    parseFloat(
-      row.querySelector(".standalone-minutes")?.value
-    ) || 0;
-
-  return (
-    !!toolName &&
-    vibration > 0 &&
-    (hours > 0 || minutes > 0)
-  );
+  return ( !!toolName && vibration > 0 && (hours > 0 || minutes > 0) );
 }
 
 function updateAddButton() {
 
   const btn = document.getElementById("addStandalone");
-  const wrapper =
-    document.getElementById("addStandaloneWrapper");
+  const wrapper = document.getElementById("addStandaloneWrapper");
 
   if (!btn || !wrapper) return;
 
-  const rows = document.querySelectorAll(
-    ".standalone-calculator-row"
-  );
-
+  const rows = document.querySelectorAll( ".standalone-calculator-row" );
   const lastRow = rows[rows.length - 1];
-
   const reason = getIncompleteReason(lastRow);
 
   btn.disabled = !!reason;
 
-  const tooltip =
-    bootstrap.Tooltip.getInstance(wrapper);
+  const tooltip = bootstrap.Tooltip.getInstance(wrapper);
 
   if (reason) {
-
-    wrapper.setAttribute(
-      "data-bs-original-title",
-      reason
-    );
+    wrapper.setAttribute( "data-bs-original-title", reason );
 
     if (tooltip) {
-      tooltip.setContent({
-        ".tooltip-inner": reason
-      });
+      tooltip.setContent({ ".tooltip-inner": reason });
     }
 
   } else {
-
-    wrapper.setAttribute(
-      "data-bs-original-title",
-      "Add another tool"
-    );
+    wrapper.setAttribute( "data-bs-original-title", "Add another tool" );
 
     if (tooltip) {
-      tooltip.setContent({
-        ".tooltip-inner": "Add another tool"
-      });
+      tooltip.setContent({ ".tooltip-inner": "Add another tool" });
     }
   }
 }
 
-// #region ========== ADD ROW (STANDALONE) ==========
 function setupStandaloneRow(row, isInitial) {
-	 console.log("Setting up row:", row);
+	//console.log("Setting up row:", row);
   const select = row.querySelector(".standalone-tool-select");
   const panel = row.querySelector(".standalone-tool-panel");
   const hours = row.querySelector(".standalone-hours");
@@ -149,16 +111,14 @@ function setupStandaloneRow(row, isInitial) {
   updateAddButton();
 });
   
- console.log("select =", select);
-    console.log("panel =", panel);
-if (!isInitial) {
-  row.classList.add("compact");
-}
+ //console.log("select =", select);
+ //console.log("panel =", panel);
+ if (!isInitial) { row.classList.add("compact"); }
 
-  if (!select || !panel || !hours || !minutes || !vibration) {
-    console.error("Standalone row missing elements", row);
-    return;
-  }
+ if (!select || !panel || !hours || !minutes || !vibration) {
+  console.error("Standalone row missing elements", row);
+  return;
+ }
 
   const toolData = window.getToolLibrary ? window.getToolLibrary() : [];
 
@@ -219,19 +179,19 @@ if (removeBtn) {
 
 function addStandaloneRow(isInitial = false) {
   const container = document.getElementById("standaloneContainer");
-console.log("addStandaloneRow called, isInitial =", isInitial);
+//console.log("addStandaloneRow called, isInitial =", isInitial);
   const templateId = isInitial
     ? "standaloneToolTemplateFull"
     : "standaloneToolTemplateCompact";
 
   console.log("readyState:", document.readyState);
-  console.log("templateId:", templateId);
-  console.log("template:", document.getElementById(templateId));
+  //console.log("templateId:", templateId);
+  //console.log("template:", document.getElementById(templateId));
 
   const template = document.getElementById(templateId);
 
-console.log("templateId =", templateId);
-console.log("template =", template);
+//console.log("templateId =", templateId);
+//console.log("template =", template);
 
 if (!template) {
   throw new Error(`Template not found: ${templateId}`);
@@ -248,61 +208,46 @@ const clone = template.content.cloneNode(true);
     newRow.classList.add("compact");
   }
 
-  console.log("New row classes:", newRow.className);
+  //console.log("New row classes:", newRow.className);
 
   setupStandaloneRow(newRow, isInitial);
  
 }
-// #endregion
 
 function updateDeleteButtons() {
-  const rows = document.querySelectorAll(
-    ".standalone-calculator-row"
-  );
+  const rows = document.querySelectorAll( ".standalone-calculator-row" );
 
   rows.forEach(row => {
-    const btn = row.querySelector(
-      '[data-role="remove-row"]'
-    );
+    const btn = row.querySelector( '[data-role="remove-row"]' );
 
     if (!btn) return;
 
-    btn.style.display =
-      rows.length <= 1 ? "none" : "";
+    btn.style.display = rows.length <= 1 ? "none" : "";
   });
 }
 
 function resetAll() {
 
-  const container =
-    document.getElementById("standaloneContainer");
+  const container = document.getElementById("standaloneContainer");
 
   if (!container) return;
 
-  // Remove all rows
   container.innerHTML = "";
 
-document.getElementById("employeeName").value = "";
-document.getElementById("siteName").value = "";
-document.getElementById("startDate").value = "";
+  document.getElementById("employeeName").value = "";
+  document.getElementById("siteName").value = "";
+  document.getElementById("startDate").value = "";
 
-  // Recreate the default row
   addStandaloneRow(true);
-
-  // Reset results
   updateOutput();
   updateBreakdown();
   updateDeleteButtons();
   updateAddButton();
 }
 
-// #region ========== BUILD DROPDOWN ==========
  function buildDropdown(panel, tools, row) {
   panel.innerHTML = "";
 
-  // =========================
-  // SEARCH BOX
-  // =========================
   const searchWrap = document.createElement("div");
   searchWrap.className = "tool-search-wrap";
 
@@ -323,9 +268,6 @@ document.getElementById("startDate").value = "";
     });
   });
 
-  // =========================
-  // GROUP TOOLS
-  // =========================
   const grouped = {};
   const manual = [];
 
@@ -335,7 +277,7 @@ document.getElementById("startDate").value = "";
       return;
     }
 
-    const mfr = (t.manufacturer || "Other").trim(); // KEEP CASE AS-IS
+    const mfr = (t.manufacturer || "Other").trim();
     const type = (t.type || "Other").trim();
 
     grouped[mfr] ??= {};
@@ -343,9 +285,6 @@ document.getElementById("startDate").value = "";
     grouped[mfr][type].push(t);
   });
 
-  // =========================
-  // MANUAL TOOLS
-  // =========================
   manual.forEach(tool => {
     const opt = document.createElement("div");
     opt.className = "tool-option";
@@ -382,14 +321,11 @@ opt.addEventListener("click", e => {
     panel.appendChild(opt);
   });
 
-  // =========================
-  // MANUFACTURERS + TYPES
-  // =========================
   Object.keys(grouped)
     .sort()
     .forEach(mfr => {
 
-      const mfrDisplay = (mfr || "").trim(); // EXACT CASE
+      const mfrDisplay = (mfr || "").trim();
 
       const mfrHeader = document.createElement("div");
       mfrHeader.className = "tool-heading";
@@ -474,18 +410,12 @@ if (vibration) {
     });
 }
 
-// #endregion
-
-
-
-// #region ========== CALCULATE ROW ==========
 function calculateRow(row) {
   
   let mag = 0;
   let h = 0;
   let m = 0;
 
-    // Read standalone inputs
     mag = parseFloat(
   row.querySelector(".standalone-vibration")?.value
 ) || 0;
@@ -521,9 +451,7 @@ if (mag > 0 && totalMinutes > 0) {
   if (typeof updateBreakdown === "function") updateBreakdown();
   if (typeof updateOutput === "function") updateOutput();
 }
-// #endregion
 
-// #region ========== FORMAT TIME ==========
 function formatTime(mins) {
   if (!mins || mins <= 0) return "";
 
@@ -538,9 +466,8 @@ function formatTime(mins) {
 
   return `${m} min`;
 }
-// #endregion
 
-// #region ========== GET EXPOSURE BAND ==========
+
 function getExposureBand(a8) {
   if (a8 >= 5.0) {
     return "danger";
@@ -560,13 +487,10 @@ function getExposureBand(a8) {
 
   return "safe";
 }
-// #endregion
-
 
 function updateToolStatus(row) {
 
-  const indicator =
-    row.querySelector(".tool-status-indicator");
+  const indicator = row.querySelector(".tool-status-indicator");
 
   if (!indicator) return;
 
@@ -591,24 +515,20 @@ function updateToolStatus(row) {
     getExposureBand(a8)
   );
 }
-// #region ========== UPDATE OUTPUT ==========
+
 function updateOutput() {
 
   const output =
-    document.querySelector("#output .result")
-    || document.getElementById("output");
+    document.querySelector("#output .result") || document.getElementById("output");
 
   if (!output) return;
 
-  const resultsHeading =
-    document.getElementById("results-heading");
+  const resultsHeading = document.getElementById("results-heading");
 
   let totalPoints = 0;
   let totalMinutes = 0;
 
-const queryRows = Array.from(
-    document.querySelectorAll(".standalone-calculator-row")
-);
+const queryRows = Array.from(document.querySelectorAll(".standalone-calculator-row"));
 
   queryRows.forEach(row => {
 
@@ -665,8 +585,6 @@ const queryRows = Array.from(
 
   exposure.innerHTML = `
     ${Math.round(totalPoints)} points
-
-
     | ${a8.toFixed(1)} m/s² A(8)
   `;
 
@@ -729,16 +647,13 @@ const queryRows = Array.from(
     output.classList.add("pulse");
   }
 }
-// #endregion
 
-// #region ========== UPDATE BREAKDOWN ==========
+
 function updateBreakdown() {
 
-  const wrapper =
-    document.getElementById("tool-breakdown-wrapper");
+  const wrapper = document.getElementById("tool-breakdown-wrapper");
 
-  const container =
-    document.getElementById("tool-breakdown");
+  const container = document.getElementById("tool-breakdown");
 
   if (!wrapper || !container) return;
 
@@ -746,9 +661,7 @@ function updateBreakdown() {
 
   let hasData = false;
 
-const queryRows = Array.from(
-    document.querySelectorAll(".standalone-calculator-row")
-);
+const queryRows = Array.from( document.querySelectorAll(".standalone-calculator-row"));
 
   queryRows.forEach(row => {
 
@@ -803,18 +716,10 @@ const queryRows = Array.from(
 
     hasData = true;
 
-    const exposureLevel =
-      getExposureBand(a8);
-
-    const bandClass =
-      `band-${exposureLevel}`;
-
-    const percentELV =
-      (pts / 400) * 100;
-
-    const barWidth =
-      Math.min(percentELV, 100);
-
+    const exposureLevel = getExposureBand(a8);
+    const bandClass = `band-${exposureLevel}`;
+    const percentELV = (pts / 400) * 100;
+    const barWidth = Math.min(percentELV, 100);
     const div = document.createElement("div");
 
     div.className =
@@ -824,21 +729,16 @@ const queryRows = Array.from(
       <div class="row g-0 align-items-center">
 
         <div class="col-auto pe-3 breakdown-icon">
-
           <img
             src="${icon}"
             width="64"
             height="64"
           >
-
         </div>
-
         <div class="col">
-
           <h5 class="breakdown-title mb-2">
             ${displayName}
           </h5>
-
           <div
             class="progress mb-2"
             role="progressbar"
@@ -846,70 +746,39 @@ const queryRows = Array.from(
             aria-valuemin="0"
             aria-valuemax="100"
           >
-
             <div
               class="progress-bar progress-bar-striped"
               style="width:${barWidth}%"
             ></div>
-
           </div>
-
           <div class="breakdown-values">
-
             ${pts.toFixed(0)} pts
             (${percentELV.toFixed(1)}% ELV) | A(8) = ${a8.toFixed(1)} m/s²
-
           </div>
-
         </div>
-
       </div>
     `;
-
     container.appendChild(div);
-
   });
 
-  if (hasData) {
-    wrapper.classList.remove("d-none");
-  } else {
-    wrapper.classList.add("d-none");
-  }
-
+  if (hasData) {wrapper.classList.remove("d-none");}
+  else {wrapper.classList.add("d-none");}
 }
-// #endregion
+
 function getIncompleteReason(row) {
 
-  if (!row) {
-    return "Complete the current tool.";
-  }
+  if (!row) {return "Complete the current tool.";}
 
-  if (!row.dataset.toolName) {
-    return "Select a tool first.";
-  }
+  if (!row.dataset.toolName) {return "Select a tool first.";}
 
-  const vibration =
-    parseFloat(
-      row.querySelector(".standalone-vibration")?.value
-    ) || 0;
+  const vibration = parseFloat(row.querySelector(".standalone-vibration")?.value) || 0;
 
-  if (vibration <= 0) {
-    return "Enter a vibration value.";
-  }
+  if (vibration <= 0) {return "Enter a vibration value.";}
 
-  const hours =
-    parseFloat(
-      row.querySelector(".standalone-hours")?.value
-    ) || 0;
+  const hours = parseFloat(row.querySelector(".standalone-hours")?.value) || 0;
+  const minutes = parseFloat( row.querySelector(".standalone-minutes")?.value) || 0;
 
-  const minutes =
-    parseFloat(
-      row.querySelector(".standalone-minutes")?.value
-    ) || 0;
-
-  if ((hours + minutes) <= 0) {
-    return "Enter exposure time.";
-  }
+  if ((hours + minutes) <= 0) {return "Enter exposure time.";}
 
   return "";
 }

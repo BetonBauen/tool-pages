@@ -426,7 +426,6 @@ input[class="magnitude"],input[class="hours"],input[class="minutes"],select {
     }
 
   }*/
-
-
-
-
+.ReportWrapper{
+  visibility: hidden;
+}
