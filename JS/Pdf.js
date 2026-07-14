@@ -96,17 +96,17 @@ function populatePdfReport() {
 
     document.getElementById("pdfTotalPoints").textContent = Math.round(totalPoints);
 
-    document.getElementById("pdfExposure").textContent = document.getElementById("result-exposure").textContent;
-    console.log("result-exposure")
+    //document.getElementById("pdfExposure").textContent = document.getElementById("result-exposure").textContent;
+    //console.log("result-exposure")
 
-    document.getElementById("pdfStatus").textContent = document.getElementById("result-title").textContent;
-    console.log("result-title")
+    //document.getElementById("pdfStatus").textContent = document.getElementById("result-title").textContent;
+    //console.log("result-title")
     
-    document.getElementById("pdfDetail").textContent = document.getElementById("result-detail").textContent;
-    console.log("result-detail")
+   // document.getElementById("pdfDetail").textContent = document.getElementById("result-detail").textContent;
+    //console.log("result-detail")
 
-    document.getElementById("pdfAction").textContent = document.getElementById("result-action").textContent;
-    console.log("result-action")
+    //document.getElementById("pdfAction").textContent = document.getElementById("result-action").textContent;
+   // console.log("result-action")
 
     const output = document.getElementById("output");
 
@@ -115,14 +115,14 @@ function populatePdfReport() {
     pdfResult.className = output.className;
     pdfResult.classList.remove("visible");
 
-    const sourceIcon = document.getElementById("result-icon");
+   // const sourceIcon = document.getElementById("result-icon");
 
-    const targetIcon = document.getElementById("pdfResultIcon");
+   // const targetIcon = document.getElementById("pdfResultIcon");
 
-    if (sourceIcon && targetIcon) {
-        targetIcon.innerHTML = sourceIcon.innerHTML;
-          console.log("icon")
-    }
+   // if (sourceIcon && targetIcon) {
+  //      targetIcon.innerHTML = sourceIcon.innerHTML;
+  //        console.log("icon")
+  //  }
 savePdfReport();
 }
 

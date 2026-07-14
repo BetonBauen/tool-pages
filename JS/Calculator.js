@@ -622,11 +622,11 @@ const queryRows = Array.from(document.querySelectorAll(".standalone-calculator-r
   };
 
   const icons = {
-    safe: "https://raw.githubusercontent.com/ChrisAndrewsBB/tool-pages/refs/heads/testing/Assets/Icons/Status/Safe.png",
-    caution: "https://raw.githubusercontent.com/ChrisAndrewsBB/tool-pages/refs/heads/testing/Assets/Icons/Status/Caution.svg",
-    warning: "https://raw.githubusercontent.com/ChrisAndrewsBB/tool-pages/refs/heads/testing/Assets/Icons/Status/Warning.svg",
-    alert: "https://raw.githubusercontent.com/ChrisAndrewsBB/tool-pages/refs/heads/testing/Assets/Icons/Status/Alert.svg",
-    danger: "https://raw.githubusercontent.com/ChrisAndrewsBB/tool-pages/refs/heads/testing/Assets/Icons/Status/Danger.svg"
+    safe: "https://raw.githubusercontent.com/BetonBauen/tool-pages/refs/heads/testing/Assets/Icons/Status/Safe.png",
+    caution: "https://raw.githubusercontent.com/BetonBauen/tool-pages/refs/heads/testing/Assets/Icons/Status/Caution.svg",
+    warning: "https://raw.githubusercontent.com/BetonBauen/tool-pages/refs/heads/testing/Assets/Icons/Status/Warning.svg",
+    alert: "https://raw.githubusercontent.com/BetonBauen/tool-pages/refs/heads/testing/Assets/Icons/Status/Alert.svg",
+    danger: "https://raw.githubusercontent.com/BetonBauen/tool-pages/refs/heads/testing/Assets/Icons/Status/Danger.svg"
   };
 
   icon.innerHTML = `
