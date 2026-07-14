@@ -1,19 +1,14 @@
 document.addEventListener("DOMContentLoaded", () => {
   console.log("=== HAV CALCULATOR INIT RUNNING ===");
 
-  const standaloneSelect = document.querySelector(".standalone-tool-select");
-  const standalonePanel = document.querySelector(".standalone-tool-panel");
+  //const standaloneSelect = document.querySelector(".standalone-tool-select");
+  //const standalonePanel = document.querySelector(".standalone-tool-panel");
   const standaloneHours = document.querySelector(".standalone-hours");
   const standaloneMinutes = document.querySelector(".standalone-minutes");
 
-  document
-  .getElementById("addStandalone")
-  ?.addEventListener("click", () => {
+  document.getElementById("addStandalone")?.addEventListener("click", () => {
 
-    const rows = document.querySelectorAll(
-      ".standalone-calculator-row"
-    );
-
+    const rows = document.querySelectorAll(".standalone-calculator-row");
     const lastRow = rows[rows.length - 1];
 
     if (!isRowComplete(lastRow)) {
@@ -24,34 +19,41 @@ document.addEventListener("DOMContentLoaded", () => {
 	updateAddButton();
   });
 
-  document
-  .getElementById("resetall")
-  ?.addEventListener("click", resetAll);
+  document.getElementById("resetall")?.addEventListener("click", resetAll);
 
   // Close dropdowns when clicking away
   document.addEventListener("click", (e) => {
-  if (standaloneSelect && standalonePanel) {
-    const isInside = e.target.closest(".tool-dropdown");
-
-    if (!isInside) {
-      standalonePanel.classList.remove("open");
-      standalonePanel.style.display = "none";
+  
+    if (e.target.closest(".tool-dropdown")) {
+      return;
     }
-  }
+
+    document.querySelectorAll(".tool-panel.open").forEach(panel => {
+      panel.classList.remove("open");
+    });
 });
 
   const toolData = window.getToolLibrary ? window.getToolLibrary() : [];
   console.log(`-> Loaded ${toolData.length} tools into the inventory buffer.`);
-;
  
- const wrapper = document.getElementById("addStandaloneWrapper");
- if (wrapper) {
- new bootstrap.Tooltip(wrapper, {trigger:"hover focus"});
- }
- 
+  const wrapper = document.getElementById("addStandaloneWrapper");
+
+  if (wrapper) {
+  new bootstrap.Tooltip(wrapper, {trigger:"hover focus"});
+  }
+
+const saveWrapper = document.getElementById("saveWrapper");
+
+if (saveWrapper) {
+    new bootstrap.Tooltip(saveWrapper, {
+        trigger: "hover focus"
+    });
+}
+
   addStandaloneRow(true);
   updateAddButton();
   updateDeleteButtons();
+  updateExportButton(0);
 });
 
 function isRowComplete(row) {
@@ -86,13 +88,40 @@ function updateAddButton() {
     if (tooltip) {
       tooltip.setContent({ ".tooltip-inner": reason });
     }
-
-  } else {
+  }
+  
+  else {
     wrapper.setAttribute( "data-bs-original-title", "Add another tool" );
 
     if (tooltip) {
       tooltip.setContent({ ".tooltip-inner": "Add another tool" });
     }
+  }
+}
+
+function updateExportButton(totalPoints = 0) {
+console.log("total points " + totalPoints)
+ const btn = document.getElementById("generatePdf");
+  const wrapper = document.getElementById("saveWrapper");
+
+  if (!btn || !wrapper) return;
+
+  const enabled = totalPoints > 0;
+
+  btn.disabled = !enabled;
+
+  const text = enabled
+    ? "Save report as PDF"
+    : "Add at least one complete tool before exporting";
+
+  wrapper.setAttribute("data-bs-original-title", text);
+
+  const tooltip = bootstrap.Tooltip.getInstance(wrapper);
+
+  if (tooltip) {
+    tooltip.setContent({
+      ".tooltip-inner": text
+    });
   }
 }
 
@@ -132,12 +161,10 @@ function setupStandaloneRow(row, isInitial) {
 
   document.querySelectorAll(".tool-panel").forEach(p => {
     p.classList.remove("open");
-    p.style.display = "none";
   });
 
   if (!isOpen) {
     panel.classList.add("open");
-    panel.style.display = "block";
   }
 });
 
@@ -150,7 +177,7 @@ function setupStandaloneRow(row, isInitial) {
       calculateRow(row);
       updateOutput();
       updateBreakdown();
-	  updateAddButton();
+	    updateAddButton();
     });
   });
   
@@ -168,10 +195,10 @@ if (removeBtn) {
     }
 
     row.remove();
-	updateDeleteButtons();
+	  updateDeleteButtons();
     updateOutput();
     updateBreakdown();
-	updateAddButton();
+	  updateAddButton();
   });
 }
   
@@ -179,7 +206,7 @@ if (removeBtn) {
 
 function addStandaloneRow(isInitial = false) {
   const container = document.getElementById("standaloneContainer");
-//console.log("addStandaloneRow called, isInitial =", isInitial);
+  //console.log("addStandaloneRow called, isInitial =", isInitial);
   const templateId = isInitial
     ? "standaloneToolTemplateFull"
     : "standaloneToolTemplateCompact";
@@ -190,14 +217,14 @@ function addStandaloneRow(isInitial = false) {
 
   const template = document.getElementById(templateId);
 
-//console.log("templateId =", templateId);
-//console.log("template =", template);
+  //console.log("templateId =", templateId);
+  //console.log("template =", template);
 
-if (!template) {
-  throw new Error(`Template not found: ${templateId}`);
-}
+  if (!template) {
+    throw new Error(`Template not found: ${templateId}`);
+  }
 
-const clone = template.content.cloneNode(true);
+  const clone = template.content.cloneNode(true);
 
   container.appendChild(clone);
 
@@ -211,7 +238,6 @@ const clone = template.content.cloneNode(true);
   //console.log("New row classes:", newRow.className);
 
   setupStandaloneRow(newRow, isInitial);
- 
 }
 
 function updateDeleteButtons() {
@@ -245,7 +271,7 @@ function resetAll() {
   updateAddButton();
 }
 
- function buildDropdown(panel, tools, row) {
+function buildDropdown(panel, tools, row) {
   panel.innerHTML = "";
 
   const searchWrap = document.createElement("div");
@@ -290,40 +316,40 @@ function resetAll() {
     opt.className = "tool-option";
     opt.textContent = tool.name;
 
-opt.addEventListener("click", e => {
-  e.preventDefault();
-  e.stopPropagation();
+    opt.addEventListener("click", e => {
+      e.preventDefault();
+      e.stopPropagation();
 
-  const customName = prompt("Enter tool name or model");
+      const customName = prompt("Enter tool name or model");
 
-  if (!customName) return;
+      if (!customName) return;
 
-  const label = row.querySelector(".standalone-tool-select");
-  const vibration = row.querySelector(".standalone-vibration");
+      const label = row.querySelector(".standalone-tool-select");
+      const vibration = row.querySelector(".standalone-vibration");
 
-  label.textContent = customName;
+      label.textContent = customName;
 
-  row.dataset.toolName = customName;
-  row.dataset.isManual = "true";
+      row.dataset.toolName = customName;
+      row.dataset.isManual = "true";
 
-  vibration.value = "";
-  vibration.readOnly = false;
+      vibration.value = "";
+      vibration.readOnly = false;
 
-  panel.classList.remove("open");
-  panel.style.display = "none";
+      panel.classList.remove("open");
 
-  calculateRow(row);
-  updateOutput();
-  updateBreakdown();
-  updateAddButton();
-});
+      calculateRow(row);
+      updateOutput();
+      updateBreakdown();
+      updateAddButton();
+      updateExportButton();
+    });
 
     panel.appendChild(opt);
   });
 
-  Object.keys(grouped)
-    .sort()
-    .forEach(mfr => {
+    Object.keys(grouped)
+      .sort()
+      .forEach(mfr => {
 
       const mfrDisplay = (mfr || "").trim();
 
@@ -396,12 +422,12 @@ if (vibration) {
 }
 
                 panel.classList.remove("open");
-                panel.style.display = "none";
 
                 calculateRow(row);
                 updateOutput();
                 updateBreakdown();
-				updateAddButton();
+				        updateAddButton();
+                updateExportButton();
               });
 
               panel.appendChild(opt);
@@ -411,42 +437,35 @@ if (vibration) {
 }
 
 function calculateRow(row) {
-  
   let mag = 0;
   let h = 0;
   let m = 0;
 
-    mag = parseFloat(
-  row.querySelector(".standalone-vibration")?.value
-) || 0;
-    h = parseFloat(row.querySelector(".standalone-hours")?.value) || 0;
-    m = parseFloat(row.querySelector(".standalone-minutes")?.value) || 0;
-
+  mag = parseFloat(row.querySelector(".standalone-vibration")?.value) || 0;
+  h = parseFloat(row.querySelector(".standalone-hours")?.value) || 0;
+  m = parseFloat(row.querySelector(".standalone-minutes")?.value) || 0;
 
   const totalMinutes = (h * 60) + m;
 
-if (mag > 0 && totalMinutes > 0) {
+  if (mag > 0 && totalMinutes > 0) {
+    const partialPoints = 2 * Math.pow(mag, 2) * (totalMinutes / 60);
 
-  const partialPoints =
-    2 * Math.pow(mag, 2) * (totalMinutes / 60);
+    const partialMs = mag * Math.sqrt(totalMinutes / 480);
 
-  const partialMs =
-    mag * Math.sqrt(totalMinutes / 480);
-
-  row.dataset.mag = mag;
-  row.dataset.minutes = totalMinutes;
-  row.dataset.points = partialPoints;
-  row.dataset.a8 = partialMs;
-  updateToolStatus(row);
-
-} else {
-
-  row.dataset.mag = 0;
-  row.dataset.minutes = 0;
-  row.dataset.points = 0;
-  row.dataset.a8 = 0;
-  updateToolStatus(row);
-}
+    row.dataset.mag = mag;
+    row.dataset.minutes = totalMinutes;
+    row.dataset.points = partialPoints;
+    row.dataset.a8 = partialMs;
+    updateToolStatus(row);
+  }
+  
+  else {
+    row.dataset.mag = 0;
+    row.dataset.minutes = 0;
+    row.dataset.points = 0;
+    row.dataset.a8 = 0;
+    updateToolStatus(row);
+  }
 
   if (typeof updateBreakdown === "function") updateBreakdown();
   if (typeof updateOutput === "function") updateOutput();
@@ -467,59 +486,38 @@ function formatTime(mins) {
   return `${m} min`;
 }
 
-
 function getExposureBand(a8) {
-  if (a8 >= 5.0) {
-    return "danger";
-  }
+  if (a8 >= 5.0) {return "danger";}
 
-  if (a8 >= 4.0) {
-    return "alert";
-  }
+  if (a8 >= 4.0) {return "alert";}
 
-  if (a8 >= 2.5) {
-    return "warning";
-  }
+  if (a8 >= 2.5) {return "warning";}
 
-  if (a8 >= 2.0) {
-    return "caution";
-  }
+  if (a8 >= 2.0) {return "caution";}
 
   return "safe";
 }
 
 function updateToolStatus(row) {
-
   const indicator = row.querySelector(".tool-status-indicator");
 
   if (!indicator) return;
 
-  indicator.classList.remove(
-    "inactive",
-    "safe",
-    "caution",
-    "warning",
-    "alert",
-    "danger"
-  );
+  indicator.classList.remove("inactive","safe","caution","warning","alert","danger");
 
-  const a8 =
-    parseFloat(row.dataset.a8) || 0;
+  const a8 = parseFloat(row.dataset.a8) || 0;
 
   if (a8 <= 0) {
     indicator.classList.add("inactive");
     return;
   }
 
-  indicator.classList.add(
-    getExposureBand(a8)
-  );
+  indicator.classList.add(getExposureBand(a8));
 }
 
 function updateOutput() {
 
-  const output =
-    document.querySelector("#output .result") || document.getElementById("output");
+  const output = document.querySelector("#output .result") || document.getElementById("output");
 
   if (!output) return;
 
@@ -528,7 +526,7 @@ function updateOutput() {
   let totalPoints = 0;
   let totalMinutes = 0;
 
-const queryRows = Array.from(document.querySelectorAll(".standalone-calculator-row"));
+  const queryRows = Array.from(document.querySelectorAll(".standalone-calculator-row"));
 
   queryRows.forEach(row => {
 
@@ -540,7 +538,7 @@ const queryRows = Array.from(document.querySelectorAll(".standalone-calculator-r
     totalMinutes += mins;
   }
 
-});
+  });
 
   const icon = document.getElementById("result-icon");
   const title = document.getElementById("result-title");
@@ -549,22 +547,17 @@ const queryRows = Array.from(document.querySelectorAll(".standalone-calculator-r
   const action = document.getElementById("result-action");
   //const debug = document.getElementById("debug-band");
 
-  if (
-    !icon ||
-    !title ||
-    !exposure ||
-    !detail ||
-    !action
-  ) {
+  if (!icon || !title || !exposure || !detail || !action) {
     return;
   }
 
   if (!totalPoints || totalMinutes === 0) {
+
+    updateExportButton(0);
+
     output.classList.remove("visible", "pulse", "band-safe", "band-caution", "band-warning", "band-alert", "band-danger");
 
-    if (resultsHeading) {
-      resultsHeading.classList.add("d-none");
-    }
+    if (resultsHeading) {resultsHeading.classList.add("d-none");}
 
     title.textContent = "";
     exposure.textContent = "";
@@ -577,9 +570,7 @@ const queryRows = Array.from(document.querySelectorAll(".standalone-calculator-r
 
   output.classList.add("visible");
 
-  if (resultsHeading) {
-    resultsHeading.classList.remove("d-none");
-  }
+  if (resultsHeading) {resultsHeading.classList.remove("d-none");}
 
   const a8 = Math.sqrt(totalPoints / 400) * 5;
 
@@ -638,21 +629,21 @@ const queryRows = Array.from(document.querySelectorAll(".standalone-calculator-r
   action.textContent = hseText[exposureLevel].action;
 
   //if (debug) {
- //   debug.textContent = `DEBUG: points = ${Math.round(totalPoints)} | a8 = ${a8.toFixed(2)} | level = ${exposureLevel}`;
- // }
+  //debug.textContent = `DEBUG: points = ${Math.round(totalPoints)} | a8 = ${a8.toFixed(2)} | level = ${exposureLevel}`;
+  //}
 
   output.classList.remove("pulse");
+
   if (exposureLevel !== "safe" && exposureLevel !== "caution") {
     void output.offsetWidth;
     output.classList.add("pulse");
   }
+    updateExportButton(totalPoints);
 }
-
 
 function updateBreakdown() {
 
   const wrapper = document.getElementById("tool-breakdown-wrapper");
-
   const container = document.getElementById("tool-breakdown");
 
   if (!wrapper || !container) return;
@@ -661,7 +652,7 @@ function updateBreakdown() {
 
   let hasData = false;
 
-const queryRows = Array.from( document.querySelectorAll(".standalone-calculator-row"));
+  const queryRows = Array.from( document.querySelectorAll(".standalone-calculator-row"));
 
   queryRows.forEach(row => {
 
@@ -671,31 +662,18 @@ const queryRows = Array.from( document.querySelectorAll(".standalone-calculator-
       return;
     }
 
-    const tools =
-      window.getToolLibrary
-        ? window.getToolLibrary()
-        : [];
-
-    const toolData = tools.find(
-      t => t.name.trim() === model.trim()
-    );
-
-    const manufacturer =
-      toolData?.manufacturer || "";
-
-    const type =
-      toolData?.type || "";
+    const tools = window.getToolLibrary? window.getToolLibrary(): [];
+    const toolData = tools.find(t => t.name.trim() === model.trim());
+    const manufacturer = toolData?.manufacturer || "";
+    const type = toolData?.type || "";
 
     let displayName = model;
 	
-	if (toolData) {
-  displayName =
-    `${toolData.manufacturer} ${toolData.name} (${toolData.type})`;
-}
+	  if (toolData) {
+      displayName = `${toolData.manufacturer} ${toolData.name} (${toolData.type})`;
+    }
 
-    const icon =
-      toolData?.icon
-      || "./Assets/Icons/Tools/Default.svg";
+    const icon = toolData?.icon || "./Assets/Icons/Tools/Default.svg";
 
     let pts = 0;
     let a8 = 0;
@@ -703,13 +681,13 @@ const queryRows = Array.from( document.querySelectorAll(".standalone-calculator-
     let h = 0;
     let m = 0;
 
-      mag = parseFloat(row.querySelector(".standalone-vibration")?.value) || 0;
-      h = parseFloat(row.querySelector(".standalone-hours")?.value) || 0;
-      m = parseFloat(row.querySelector(".standalone-minutes")?.value) || 0;
+    mag = parseFloat(row.querySelector(".standalone-vibration")?.value) || 0;
+    h = parseFloat(row.querySelector(".standalone-hours")?.value) || 0;
+    m = parseFloat(row.querySelector(".standalone-minutes")?.value) || 0;
       
-      const totalMins = (h * 60) + m;
-      pts = mag > 0 && totalMins > 0 ? (2 * Math.pow(mag, 2) * (totalMins / 60)) : 0;
-      a8 = mag > 0 && totalMins > 0 ? (mag * Math.sqrt(totalMins / 480)) : 0;
+    const totalMins = (h * 60) + m;
+    pts = mag > 0 && totalMins > 0 ? (2 * Math.pow(mag, 2) * (totalMins / 60)) : 0;
+    a8 = mag > 0 && totalMins > 0 ? (mag * Math.sqrt(totalMins / 480)) : 0;
 
     if (isNaN(pts) || pts <= 0) return;
     if ((h + m) === 0) return;
@@ -722,12 +700,10 @@ const queryRows = Array.from( document.querySelectorAll(".standalone-calculator-
     const barWidth = Math.min(percentELV, 100);
     const div = document.createElement("div");
 
-    div.className =
-      `alert ${bandClass} breakdown-row mb-3`;
+    div.className = `alert ${bandClass} breakdown-row mb-3`;
 
     div.innerHTML = `
       <div class="row g-0 align-items-center">
-
         <div class="col-auto pe-3 breakdown-icon">
           <img
             src="${icon}"
@@ -760,7 +736,6 @@ const queryRows = Array.from( document.querySelectorAll(".standalone-calculator-
     `;
     container.appendChild(div);
   });
-
   if (hasData) {wrapper.classList.remove("d-none");}
   else {wrapper.classList.add("d-none");}
 }
@@ -768,7 +743,6 @@ const queryRows = Array.from( document.querySelectorAll(".standalone-calculator-
 function getIncompleteReason(row) {
 
   if (!row) {return "Complete the current tool.";}
-
   if (!row.dataset.toolName) {return "Select a tool first.";}
 
   const vibration = parseFloat(row.querySelector(".standalone-vibration")?.value) || 0;

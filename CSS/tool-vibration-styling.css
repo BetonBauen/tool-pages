@@ -77,11 +77,14 @@ input[id="employeeName"], input[id="siteName"], input[id="startDate"] {
   display: block !important;
 }
 .tool-panel {
+  display: none;
   position: absolute !important; /* !important ensures custom rules don't block it */
   top: 100%;
   left: 0;
   width: 100%;
-  z-index: 1050; /* Ensures it floats over the top of the input borders below it */
+  z-index: 1060; /* Ensures it floats over the top of the input borders below it */
+  max-height: 250px;
+  overflow-y: auto;
 }
 .tool-dropdown .tool-panel {
   position: absolute !important;
