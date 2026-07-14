@@ -12,10 +12,10 @@
   <link rel="stylesheet" href="CSS/general-styling.css" type="text/css"> <!-- Import base stylesheet -->
   <link rel="stylesheet" href="CSS/tool-vibration-styling.css" type="text/css"> <!-- Import tool vibration stylesheet -->
   <!-- Icons -->
-  <link rel="icon" sizes="192x192" class="bb-icon">
-  <link rel="shortcut icon" class="bb-icon">
-  <link rel="apple-touch-icon" class="bb-icon">
-  <link rel="mask-icon" class="bb-icon">
+  <link rel="icon" sizes="192x192" href="Assets/Logos/BetonBauenLogo.svg">
+  <link rel="shortcut icon" href="Assets/Logos/BetonBauenLogo.svg">
+  <link rel="apple-touch-icon" href="Assets/Logos/BetonBauenLogo.svg">
+  <link rel="mask-icon" href="Assets/Logos/BetonBauenLogo.svg">
   <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com"> <!-- Import Roboto font family -->
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin> <!-- Import Roboto font family -->
@@ -235,24 +235,27 @@
       <span class="input-group-text text-bold section-header mb-3">TOOL DATA</span>
         <template id="standaloneToolTemplateFull">
           <div class="standalone-calculator-row" data-tool-name="" data-magnitude="0">
-            <div class="row align-items-end g-2 gy-0">
-              <div class="col-5 position-relative pt-0 mt-0">
+            <div class="row align-items-end g-2 gy-2 mx-0">
+              <div class="col-5 position-relative pt-0 mt-0 g-0 mx-0">
                 <div class="tool-status-indicator"></div>
                 <div class="tool-dropdown">
                   <div class="standalone-tool-select tool-selected form-select text-start py-2" style="cursor: pointer; min-height: 38px;">Select tool</div>
-                  <div class="standalone-tool-panel tool-panel border rounded shadow-lg mt-1 bg-white" "></div>
+                  <div class="standalone-tool-panel tool-panel border rounded shadow-lg mt-1 bg-white"></div>
                 </div>
               </div>
-              <div class="col-2 col-md-2 pt-0 mt-0">
+              <div class="col-auto"></div>
+              <div class="col-2 pt-0 mt-0 g-0">
                 <input class="standalone-vibration vibration form-control text-center" type="number" min="0" max="12">
               </div>
-              <div class="col-2 col-md-2 pt-0 mt-0">
+              <div class="col-auto"></div>
+              <div class="col-2 pt-0 mt-0 g-0">
                   <input class="standalone-hours hours form-control text-center" type="number" min="0" max="12">
               </div>
-              <div class="col-2 col-md-2 pt-0 mt-0">
+              <div class="col-auto"></div>
+              <div class="col-2 pt-0 mt-0 g-0">
                 <input class="standalone-minutes minutes form-control text-center" type="number" min="0" max="59">
               </div>
-              <div class="remove-wrap col-1">
+              <div class="remove-wrap col-auto pt-0 mt-0">
                 <button type="button" class="btn px-0 btn-delete" data-role="remove-row">
                   <i class="bi bi-trash-fill fs-2" style="color:#999"></i>
                 </button>
@@ -262,24 +265,27 @@
 		</template>
         <template id="standaloneToolTemplateCompact">
           <div class="standalone-calculator-row compact" data-tool-name="" data-magnitude="0">
-            <div class="row align-items-end g-2 gy-0">
-              <div class="col-5 position-relative pt-0 mt-0">
+            <div class="row align-items-end g-2 gy-2">
+              <div class="col-5 position-relative pt-0 mt-0 g-0">
                 <div class="tool-status-indicator"></div>
                   <div class="tool-dropdown">
-                    <div class="standalone-tool-select tool-selected form-select text-start py-2" style="cursor: pointer; min-height: 38px;">Select tool</div>
+                  <div class="standalone-tool-select tool-selected form-select text-start py-2" style="cursor: pointer; min-height: 38px;">Select tool</div>
                     <div class="standalone-tool-panel tool-panel border rounded shadow-lg mt-1 bg-white" ></div>
                   </div>
               </div>
-              <div class="col-2 col-2 pt-0 mt-0">
+              <div class="col-auto"></div>
+              <div class="col-2 pt-0 mt-0 g-0">
                 <input class="standalone-vibration vibration form-control text-center" type="number" min="0" max="12">
               </div>
-              <div class="col-2 col-2 pt-0 mt-0">
+              <div class="col-auto"></div>
+              <div class="col-2 pt-0 mt-0 g-0">
                 <input class="standalone-hours hours form-control text-center" type="number" min="0" max="12">
               </div>
-              <div class="col-2 col-2 pt-0 mt-0">
+              <div class="col-auto"></div>
+              <div class="col-2 pt-0 mt-0 g-0">
                 <input class="standalone-minutes minutes form-control text-center" type="number" min="0" max="59">
               </div>
-              <div class="remove-wrap col-1 pt-0 mt-0">
+              <div class="remove-wrap col-auto pt-0 mt-0">
                 <button type="button" class="btn px-0 btn-delete" data-role="remove-row">
                   <i class="bi bi-trash-fill fs-2" style="color:#999"></i>
                 </button>
@@ -288,11 +294,15 @@
             </div>
           </div>
         </template>	
-        <div class="row g-2 pb-2 tool-header-row">
-          <div class="col-md-5 text-bold">Tool</div>
-          <div class="col-6 col-md-2 text-bold">Vibration magnitude (m/s²)</div>
-          <div class="col-6 col-md-2 text-bold">Hours used</div>
-          <div class="col-6 col-md-2 text-bold">Minutes used</div>
+        <div class="row g-2 pb-2 tool-header-row mx-0">
+          <div class="col-md-5 text-bold bb-tool-data-text g-2 text-center">Tool</div>
+          <div class="col-auto"></div>
+          <div class="col-6 col-md-2 text-bold bb-tool-data-text text-center">Vibration magnitude (m/s²)</div>
+          <div class="col-auto"></div>
+          <div class="col-6 col-md-2 text-bold bb-tool-data-text text-center">Hours used</div>
+          <div class="col-auto"></div>
+          <div class="col-6 col-md-2 text-bold bb-tool-data-text text-center">Minutes used</div>
+          <div class="col-auto"></div>
           <div class="remove-wrap col-md-1 pt-0 mt-0"></div>
 		</div>
 		<div id="standaloneContainer"></div>

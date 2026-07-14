@@ -170,6 +170,7 @@ td {
 .tool-option {
   padding: 3px 10px;
   cursor: pointer;
+  /*text-align: center;*/
 }
 .tool-option:hover {
   background: var(--Alice_Blue);
@@ -378,7 +379,7 @@ input[class="magnitude"],input[class="hours"],input[class="minutes"],select {
 	width: 577px !important;
 }
 .bbformfield {
-	  background-color: #39668f;
+	background-color: #39668f;
   color: var(--White);
   font-weight: 600;
 }
@@ -431,4 +432,18 @@ input[class="magnitude"],input[class="hours"],input[class="minutes"],select {
   }*/
 .ReportWrapper{
   visibility: hidden;
+}
+.bb-tool-data-text {
+  background-color: var(--Dark_River_Blue);
+  color: var(--White);
+  font-weight: 600;
+  border-radius: 4px;
+  height: 28px;
+  padding-top: 2px;
+}
+.tool-type-heading {
+  padding: 6px 10px;
+  font-size: 14px !important;
+  font-weight: 700;
+  background: var(--Off_White_Grey);
 }
