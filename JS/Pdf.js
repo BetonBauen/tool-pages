@@ -28,8 +28,15 @@ function populatePdfReport() {
     else{
         document.getElementById("pdfEmployee").textContent = document.getElementById("employeeName").value;
     }
-    
-    console.log("employeeName")
+        console.log("employeeName")
+
+    if (document.getElementById("JobNumber").value == ""){
+        document.getElementById("pdfJobNumber").textContent = "Unspecified job";
+    }
+    else{
+        document.getElementById("pdfJobNumber").textContent = document.getElementById("JobNumber").value;
+    }
+    console.log("JobNumber")
 
     if (document.getElementById("siteName").value == ""){
         document.getElementById("pdfSite").textContent = "Unspecified site";
@@ -149,7 +156,7 @@ html2pdf()
         autoPaging: 'text',
         allowTaint: true,
         useCORS: true,
-        filename:     'Hand Arm Vibration Monitoring - ' + pdfEmployee.textContent + ' - ' + pdfSite.textContent + ' - ' + pdfDate.textContent,
+        filename:     'Hand Arm Vibration Monitoring - ' + pdfEmployee.textContent + ' - ' + pdfJobNumber.textContent + ' - ' + pdfSite.textContent + ' - ' + pdfDate.textContent,
         image:        { type: 'jpeg',quality: 0.98 },
         html2canvas:  { scale: 2, logging: true, dpi: 192, letterRendering: true, useCORS: true, removeContainer: true },
         jsPDF:        { unit: 'mm', format: 'a4', orientation: 'p' },

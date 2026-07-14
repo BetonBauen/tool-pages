@@ -49,7 +49,7 @@
   color: var(--White);
   font-weight: 600;
 }
-input[id="employeeName"], input[id="siteName"], input[id="startDate"] {
+input[id="employeeName"], input[id="siteName"], input[id="startDate"], input[id="JobNumber"] {
   width: 500px !important;
 }
 /* #endregion */
