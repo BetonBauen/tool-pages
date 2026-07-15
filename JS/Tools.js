@@ -264,7 +264,7 @@ const Tool_Library = [
   magnitude: 21.5,
   soundpower: 110,
   category: 'preset',
-  icon: "./Assets/Icons/Tools/Hilti_Hammer_Drill_Driver_Cordless_alt.svg"
+  icon: "./Assets/Icons/Tools/Hilti_Hammer_Drill_Driver_Cordless_Alt.svg"
 }
 ,
 {
@@ -295,7 +295,7 @@ const Tool_Library = [
   magnitude: 21.7,
   soundpower: 99,
   category: 'preset',
-  icon: "./Assets/Icons/Tools/hilti_reciprocating_saw.svg"
+  icon: "./Assets/Icons/Tools/Hilti_Reciprocating_Saw.svg"
 }
 ,
 {
@@ -306,7 +306,7 @@ const Tool_Library = [
   magnitude: 22.8,
   soundpower: 102,
   category: 'preset',
-  icon: "./Assets/Icons/Tools/hilti_reciprocating_saw.svg"
+  icon: "./Assets/Icons/Tools/Hilti_Reciprocating_Saw.svg"
 }
 ,
 {
@@ -327,7 +327,7 @@ const Tool_Library = [
   magnitude: 4.2,
   soundpower: 98,
   category: 'preset',
-  icon: "./Assets/Icons/Tools/hilti_jackhammer.svg"
+  icon: "./Assets/Icons/Tools/Hilti_Jackhammer.svg"
 }
 ,
 {
@@ -358,7 +358,7 @@ const Tool_Library = [
   magnitude: 7.8,
   soundpower: 109,
   category: 'preset',
-  icon: "./Assets/Icons/Tools/hilti_jackhammer_heavy.svg"
+  icon: "./Assets/Icons/Tools/Hilti_Jackhammer_Heavy.svg"
 }
 ,
 {
@@ -499,7 +499,7 @@ const Tool_Library = [
   magnitude: 8.4,
   soundpower: 100,
   category: 'preset',
-  icon: "./Assets/Icons/Tools/hilti_demolition_hammer.svg"
+  icon: "./Assets/Icons/Tools/Hilti_Demolition_Hammer.svg"
 }
 ,
 {
@@ -530,7 +530,7 @@ const Tool_Library = [
   magnitude: 11.2,
   soundpower: 108.2,
   category: 'preset',
-  icon: "./Assets/Icons/Tools/makita_jackhammer_alt.svg"
+  icon: "./Assets/Icons/Tools/Makita_Jackhammer_Alt.svg"
 }
 
 ];
