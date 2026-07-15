@@ -200,26 +200,31 @@
     <div></div>
     <div class="container-fluid bb-table mt-4 mb-4">
       <span class="input-group-text text-bold section-header mb-3">EMPLOYEE / WORK DETAILS</span>
-      <!-- Employee name -->	  
-      <div id="Employee Name" class="row">
+      <div id="1st Row" class="row">
+      <!-- Employee name -->
         <div class="col-auto">	
           <div class="input-group input-group-sm mb-2">
             <span class="input-group-text bb-input-group-text" id="nameInput">Name:</span>
               <input type="text" class="form-control text-lg-start" id="employeeName" placeholder="Name" aria-describedby="nameInput">
           </div>
         </div>
-      </div>
-      <!-- Job Number -->
-      <div id="Job Number" class="row">
+      <!-- Week -->
+        <div class="col-auto">
+          <div class="input-group input-group-sm mb-2">
+            <span class="input-group-text bb-input-group-text" id="dateInput">Date:</span>
+            <input type="date" class="form-control text-lg-start" id="startDate" placeholder="dd/mm/yyyy" aria-describedby="dateInput">
+          </div>      
+        </div>
+            </div>
+    <div id="2nd Row" class="row">
+        <!-- Job Number -->
         <div class="col-auto">
           <div class="input-group input-group-sm mb-2">
             <span class="input-group-text bb-input-group-text" id="JobInput">Job Number:</span>
             <input type="text" class="form-control text-lg-start" id="JobNumber" placeholder="Job number" aria-describedby="JobInput">
           </div>      
         </div>
-      </div>
-      <!-- Site name -->
-      <div id="Site Name" class="row">
+            <!-- Site name -->
         <div class="col-auto">
           <div class="input-group input-group-sm mb-2">
             <span class="input-group-text bb-input-group-text" id="locationInput">Site / Location:</span>
@@ -227,16 +232,7 @@
           </div>      
         </div>
       </div>
-      <!-- Week -->
-      <div id="Week" class="row">
-        <div class="col-auto">
-          <div class="input-group input-group-sm mb-2">
-            <span class="input-group-text bb-input-group-text" id="dateInput">Date:</span>
-            <input type="date" class="form-control text-lg-start" id="startDate" placeholder="dd/mm/yyyy" aria-describedby="dateInput">
-          </div>      
-        </div>
       </div>
-    </div>
   </section>
   <!-- Tool Data -->
   <section id="StandaloneTable">
@@ -402,48 +398,44 @@
   </section>
     <!-- Work Details -->
 <section id="Report_Work_Details">
-    <div></div>
+      <div></div>
     <div></div>
     <div class="container-fluid bb-table mt-4 mb-4">
       <span class="input-group-text text-bold section-header mb-3">EMPLOYEE / WORK DETAILS</span>
-      <!-- Employee name -->	  
-      <div id="Report_Employee_Name" class="row">
+      <div id="1st Report Row" class="row">
+      <!-- Employee name -->
         <div class="col-auto">	
           <div class="input-group input-group-sm mb-2">
-            <span class="input-group-text bb-input-group-text" id="ReportnameInput">Name:</span>
+                   <span class="input-group-text bb-input-group-text" id="ReportnameInput">Name:</span>
               <span id="pdfEmployee" class="form-control text-lg-start reportfield"></span>
           </div>
         </div>
-      </div>
-      <!-- Job Number -->
-      <div id="Report_Job_Number" class="row">
+      <!-- Week -->
         <div class="col-auto">
           <div class="input-group input-group-sm mb-2">
-            <span class="input-group-text bb-input-group-text" id="ReportJobInput">Job Number:</span>
+             <span class="input-group-text bb-input-group-text" id="reportdatetext">Date:</span>
+            <span id="pdfDate" class="form-control text-lg-start reportfield"></span>
+          </div>      
+        </div>
+            </div>
+    <div id="2nd Report Row" class="row">
+        <!-- Job Number -->
+        <div class="col-auto">
+          <div class="input-group input-group-sm mb-2">
+         <span class="input-group-text bb-input-group-text" id="ReportJobInput">Job Number:</span>
               <span id="pdfJobNumber" class="form-control text-lg-start reportfield"></span>
           </div>      
         </div>
-      </div>
-      <!-- Site name -->
-      <div id="Repo_Site_Name" class="row">
+            <!-- Site name -->
         <div class="col-auto">
           <div class="input-group input-group-sm mb-2">
-            <span class="input-group-text bb-input-group-text" id="reportlocationInput">Site / Location:</span>
+       <span class="input-group-text bb-input-group-text" id="reportlocationInput">Site / Location:</span>
             <span id="pdfSite" class="form-control text-lg-start reportfield"></span>
           </div>      
         </div>
       </div>
-      <!-- Week -->
-      <div id="Report_Date" class="row">
-        <div class="col-auto">
-          <div class="input-group input-group-sm mb-2">
-            <span class="input-group-text bb-input-group-text" id="reportdatetext">Date:</span>
-            <span id="pdfDate" class="form-control text-lg-start reportfield"></span>
-          </div>      
-        </div>
       </div>
-    </div>
-  </section>	
+  </section>
     <!-- Tool Data -->
 	<div class="container-fluid bb-table mt-4 mb-4">
       <span class="input-group-text text-bold section-header mb-3">TOOL DATA</span>
@@ -463,9 +455,9 @@
     <tbody id="pdfToolRows"></tbody>
 
     <tfoot>
-		<tr><td class="invisible"><p></p></td></tr>
+		<tr><td class="invisible pb-0"><p></p></td></tr>
         <tr>
-			<td colspan="2" class="invisible"></td>
+			<td colspan="2" class="invisible pt-0 pb-0"></td>
             <td colspan="1" class="bbformfield">
                 <strong>Daily Total</strong>
             </td>
