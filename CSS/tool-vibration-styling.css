@@ -447,3 +447,42 @@ input[class="magnitude"],input[class="hours"],input[class="minutes"],select {
   font-weight: 700;
   background: var(--Off_White_Grey);
 }
+.employee-dropdown{
+    position:relative;
+    width: 400px;
+    height: 29px;
+}
+
+.employee-panel{
+    display:none;
+    position:absolute;
+    top:100%;
+    left:0;
+    right:0;
+    width: auto;
+    max-height:300px;
+    overflow-y:auto;
+
+    background:#fff;
+    z-index:9999;
+}
+
+.employee-panel.open{
+    display:block;
+    width: auto;
+}
+.employee-option {
+  padding: 3px 10px;
+  cursor: pointer;
+  /*text-align: center;*/
+}
+.employee-option:hover {
+  background: var(--Alice_Blue);
+}
+.employee-select {
+    height: 29px;
+    min-height: 29px;
+    line-height: 29px;
+    padding: 0 2rem 0 0.75rem;   /* leave room for dropdown arrow if you add one */
+    font-size: 0.875rem;
+}

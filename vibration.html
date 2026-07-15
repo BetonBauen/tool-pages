@@ -205,7 +205,13 @@
         <div class="col-auto">	
           <div class="input-group input-group-sm mb-2">
             <span class="input-group-text bb-input-group-text" id="nameInput">Name:</span>
-              <input type="text" class="form-control text-lg-start" id="employeeName" placeholder="Name" aria-describedby="nameInput">
+              <div class="employee-dropdown">
+    <div id="employeeName" class="employee-select form-select text-start" style="cursor:pointer">
+        Select employee
+    </div>
+
+    <div class="employee-panel border rounded shadow-lg bg-white"></div>
+</div>
           </div>
         </div>
       <!-- Week -->
@@ -506,6 +512,7 @@
   <script src="JS/popper-2.11.8.min.js"></script>
   <script src="JS/bootstrap-5.3.8.js"></script>
   <script src="JS/Tools.js"></script>
+  <script src="JS/Operatives.js"></script>
   <script src="JS/Calculator.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.14.0/html2pdf.bundle.min.js" integrity="sha512-IgpImqjrCPtoJXRBavoYDDfWTnz8lBuklWs9yRsDRwC37l4XXH5KJDSqq108swbqMaWg+5UEZUFwpJhgD+QC7g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
   <script src="JS/html2canvas.min.js"></script>

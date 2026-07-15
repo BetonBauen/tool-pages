@@ -22,20 +22,22 @@ document.addEventListener("DOMContentLoaded", () => {
   document.getElementById("resetall")?.addEventListener("click", resetAll);
 
   // Close dropdowns when clicking away
-  document.addEventListener("click", (e) => {
-  
-    if (e.target.closest(".tool-dropdown")) {
-      return;
-    }
+document.addEventListener("click", () => {
 
-    document.querySelectorAll(".tool-panel.open").forEach(panel => {
-      panel.classList.remove("open");
-    });
+    document.querySelectorAll(".tool-panel.open")
+        .forEach(p => p.classList.remove("open"));
+
+    document.querySelectorAll(".employee-panel.open")
+        .forEach(p => p.classList.remove("open"));
+
 });
 
   const toolData = window.getToolLibrary ? window.getToolLibrary() : [];
   console.log(`-> Loaded ${toolData.length} tools into the inventory buffer.`);
  
+  const operativeData = window.getOperativeLibrary ? window.getOperativeLibrary() : [];
+  console.log(`-> Loaded ${operativeData.length} operatives into the inventory buffer.`);
+
   const wrapper = document.getElementById("addStandaloneWrapper");
 
   if (wrapper) {
@@ -54,6 +56,7 @@ if (saveWrapper) {
   updateAddButton();
   updateDeleteButtons();
   updateExportButton(0);
+  setupEmployeeDropdown();
 });
 
 function isRowComplete(row) {
@@ -756,4 +759,99 @@ function getIncompleteReason(row) {
 
   return "";
 }
+
+function setupEmployeeDropdown(){
+
+    const label = document.querySelector(".employee-select");
+    const panel = document.querySelector(".employee-panel");
+
+    const employees = window.getOperativeLibrary()
+        .slice()
+        .sort((a,b)=>a.name.localeCompare(b.name));
+
+    buildEmployeeDropdown(panel, employees, label);
+
+    label.addEventListener("click", e=>{
+        e.stopPropagation();
+
+        panel.classList.toggle("open");
+    });
+
+    panel.addEventListener("click",e=>{
+        e.stopPropagation();
+    });
+
+}
+
+function buildEmployeeDropdown(panel, employees, label){
+
+    panel.innerHTML="";
+
+    const search=document.createElement("input");
+    search.className="tool-search";
+    search.placeholder="Search...";
+
+    panel.appendChild(search);
+
+    search.addEventListener("input",()=>{
+
+        const value=search.value.toLowerCase();
+
+        panel.querySelectorAll(".employee-option").forEach(option=>{
+
+            option.style.display=
+                option.textContent.toLowerCase().includes(value)
+                ? "block"
+                : "none";
+
+        });
+
+    });
+
+    // Manual option first
+
+    const manual=document.createElement("div");
+    manual.className="employee-option";
+    manual.textContent="Manual entry...";
+
+    manual.addEventListener("click",()=>{
+
+        const name=prompt("Enter employee name");
+
+        if(!name) return;
+
+        label.textContent=name;
+        label.dataset.employee=name;
+
+        panel.classList.remove("open");
+
+    });
+
+    panel.appendChild(manual);
+
+    // Employees
+
+    employees.forEach(employee=>{
+
+        const option=document.createElement("div");
+
+        option.className="employee-option";
+
+        option.textContent=employee.name;
+
+        option.addEventListener("click",()=>{
+
+            label.textContent=employee.name;
+            label.dataset.employee=employee.name;
+
+            panel.classList.remove("open");
+
+        });
+
+        panel.appendChild(option);
+
+    });
+
+}
+
 ;
