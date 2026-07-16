@@ -66,11 +66,18 @@ input[id="employeeName"], input[id="siteName"], input[id="startDate"], input[id=
 .standalone-tool-select,.standalone-hours,.standalone-minutes {
     height: 38px;
 }
+.standalone-tool-select {
+       display: flex;
+    justify-content: center;
+    align-items: center;
+}
 .tool-selected {
   cursor: pointer;
   width: 100%;
   display: block !important;
   box-sizing: border-box;
+  align-items: center;
+  text-align: center;
 }
 .tool-dropdown {
   width: 100% !important;
@@ -449,7 +456,7 @@ input[class="magnitude"],input[class="hours"],input[class="minutes"],select {
 }
 .employee-dropdown{
     position:relative;
-    width: 400px;
+    width: 498px;
     height: 29px;
 }
 
@@ -476,6 +483,13 @@ input[class="magnitude"],input[class="hours"],input[class="minutes"],select {
   cursor: pointer;
   /*text-align: center;*/
 }
+.employee-select {
+    display: flex;
+    align-items: center;
+    justify-content: center;   /* center horizontally */
+    text-align: center;
+}
+
 .employee-option:hover {
   background: var(--Alice_Blue);
 }

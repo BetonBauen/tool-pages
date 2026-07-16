@@ -22,13 +22,13 @@ function populatePdfReport() {
 
     // Work details
 
-    if (document.getElementById("employeeName").value == ""){
+    if (document.getElementById("employeeName").textContent.trim() ==""){
         document.getElementById("pdfEmployee").textContent = "Unspecified operative";
     }
     else{
-        document.getElementById("pdfEmployee").textContent = document.getElementById("employeeName").value;
+        document.getElementById("pdfEmployee").textContent = document.getElementById("employeeName").textContent.trim();
     }
-        console.log("employeeName")
+        console.log("employeePanel")
 
     if (document.getElementById("JobNumber").value == ""){
         document.getElementById("pdfJobNumber").textContent = "Unspecified job";
