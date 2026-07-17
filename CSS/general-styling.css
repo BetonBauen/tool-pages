@@ -1,11 +1,11 @@
 /* #region DECLARATIONS */
 :root { 
   /* #region Logos */
-  --bblogo_main: url('https://raw.githubusercontent.com/ChrisAndrewsBB/tool-pages/refs/heads/testing/Assets/Logos/BetonBauenLogo_20.png');
-  --bblogo_pride:url('https://raw.githubusercontent.com/ChrisAndrewsBB/tool-pages/refs/heads/testing/Assets/Logos/BetonBauenLogo_20_Pride.png');
+  --bblogo_main: url('https://raw.githubusercontent.com/ChrisAndrewsBB/tool-pages/refs/heads/testing/Assets/Logos/PNG/BetonBauenLogo_20.png');
+  --bblogo_pride:url('https://raw.githubusercontent.com/ChrisAndrewsBB/tool-pages/refs/heads/testing/Assets/Logos/PNG/BetonBauenLogo_20_Pride.png');
   /*#endregion*/
   /* #region Icons */
-  --bblogo_shortcut: url('https://raw.githubusercontent.com/ChrisAndrewsBB/tool-pages/refs/heads/testing/Assets/Logos/BetonBauenLogo.svg');
+  --bblogo_shortcut: url('https://raw.githubusercontent.com/ChrisAndrewsBB/tool-pages/refs/heads/testing/Assets/Logos/SVG/BetonBauenLogo.svg');
   /*#endregion*/
   /* #region Colours */
   --Vivid_Malachite_Green: #04e62a;

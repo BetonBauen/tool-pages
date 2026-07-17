@@ -110,7 +110,7 @@ mfrHeader.appendChild(textSpan);
 const img = document.createElement("img");
 img.className = "manufacturer-logo";
 img.alt = mfr;
-img.src = `./Assets/Logos/${mfr}.svg`;
+img.src = `./Assets/Logos/SVG/${mfr}.svg`;
 img.loading = "eager";
 
 mfrHeader.classList.add("no-logo");
@@ -143,7 +143,7 @@ mfrBlock.appendChild(mfrHeader);
         .forEach(tool => {
 
           const sound = Number(tool.soundpower) || 0;
-          const icon = tool.icon || "./Assets/Icons/Tools/Default.svg";
+          const icon = tool.icon || "./Assets/Icons/Tools/SVG/Default.svg";
 
           const div = document.createElement("div");
           div.className = "alert noise-alert mb-2";
@@ -156,7 +156,7 @@ mfrBlock.appendChild(mfrHeader);
                   src="${icon}"
                   width="64"
                   height="64"
-                  onerror="this.src='./Assets/Icons/Tools/Default.svg'"
+                  onerror="this.src='./Assets/Icons/Tools/SVG/Default.svg'"
                 >
               </div>
 

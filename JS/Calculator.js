@@ -369,7 +369,7 @@ function buildDropdown(panel, tools, row) {
 	const img = document.createElement("img");
 	img.className = "manufacturer-logo";
 	img.alt = mfrDisplay;
-	img.src = `./Assets/Logos/${mfrDisplay}.svg`;
+	img.src = `./Assets/Logos/SVG/${mfrDisplay}.svg`;
 	img.loading = "eager";
 	
 	mfrHeader.classList.add("no-logo");
@@ -616,11 +616,11 @@ function updateOutput() {
   };
 
   const icons = {
-    safe: "https://raw.githubusercontent.com/BetonBauen/tool-pages/refs/heads/testing/Assets/Icons/Status/Safe.png",
-    caution: "https://raw.githubusercontent.com/BetonBauen/tool-pages/refs/heads/testing/Assets/Icons/Status/Caution.svg",
-    warning: "https://raw.githubusercontent.com/BetonBauen/tool-pages/refs/heads/testing/Assets/Icons/Status/Warning.svg",
-    alert: "https://raw.githubusercontent.com/BetonBauen/tool-pages/refs/heads/testing/Assets/Icons/Status/Alert.svg",
-    danger: "https://raw.githubusercontent.com/BetonBauen/tool-pages/refs/heads/testing/Assets/Icons/Status/Danger.svg"
+    safe: "https://raw.githubusercontent.com/BetonBauen/tool-pages/refs/heads/testing/Assets/Icons/Status/SVG/Safe.svg",
+    caution: "https://raw.githubusercontent.com/BetonBauen/tool-pages/refs/heads/testing/Assets/Icons/Status/SVG/Caution.svg",
+    warning: "https://raw.githubusercontent.com/BetonBauen/tool-pages/refs/heads/testing/Assets/Icons/Status/SVG/Warning.svg",
+    alert: "https://raw.githubusercontent.com/BetonBauen/tool-pages/refs/heads/testing/Assets/Icons/Status/SVG/Alert.svg",
+    danger: "https://raw.githubusercontent.com/BetonBauen/tool-pages/refs/heads/testing/Assets/Icons/Status/SVG/Danger.svg"
   };
 
   icon.innerHTML = `
@@ -676,7 +676,7 @@ function updateBreakdown() {
       displayName = `${toolData.manufacturer} ${toolData.name} (${toolData.type})`;
     }
 
-    const icon = toolData?.icon || "./Assets/Icons/Tools/Default.svg";
+    const icon = toolData?.icon || "./Assets/Icons/Tools/SVG/Default.svg";
 
     let pts = 0;
     let a8 = 0;
