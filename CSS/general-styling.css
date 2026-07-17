@@ -79,6 +79,12 @@
   background-color: var(--Vintage_Dark_Blue) !important;
   height: 35px !important;
 }
+.active {
+  text-decoration: underline;
+  text-decoration-color: var(--Vivid_Cerulean);
+  text-decoration-thickness: 2px;
+  text-underline-offset: 2px;
+}
 /* #endregion */
 
 /* #region BODY - GENERAL */
@@ -119,15 +125,15 @@ h2 {
 .bb-rectangle {
   width:10px;
   height:80px;
-  margin-top: 20px;
+  margin-top: 10px;
   margin-left: 20px;
-  margin-bottom: 20px;
+  margin-bottom: 10px;
   background: var(--Vivid_Cerulean);
 }
 .bb-page-title-container {
   padding-left: 15px;
   padding-top: 0.25rem ;
-
+margin-top: -10px;
 }
 .bb-page-title {
   margin-top:15px;
@@ -142,7 +148,7 @@ h2 {
   font-size: 2em;
 }
 .bb-logo-container {
- height:80px;
+ height:70px;
  object-fit: cover;
 }
 .bb-logo {
