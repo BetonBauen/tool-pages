@@ -191,50 +191,6 @@ input[class="magnitude"],input[class="hours"],input[class="minutes"],select {
   border:1px solid var(--Smooth_Grey);
   border-radius: 6px;
 }
-/* -- base buttons -- */
-/*.row-actions button {
-  font-size: 12px;
-  padding: 3px 8px;
-  border: 1px solid transparent;
-  cursor: pointer;
-  line-height: 1.2;
-}*/
-/* -- specific buttons -- */
-/*.btn-clearrow {
-  --bs-btn-color: var(--White);;
-  --bs-btn-bg: var(--Super_Grey);
-  --bs-btn-border-color: var(--Calming_Blue_Grey);
-  --bs-btn-hover-color: var(--White);
-  --bs-btn-hover-bg: var(--Bold_Grey);
-  --bs-btn-hover-border-color: var(--Dark_River_Blue);
-  --bs-btn-focus-shadow-rgb: 49, 132, 253;
-  --bs-btn-active-color: var(--White);
-  --bs-btn-active-bg: var(--Misty_Blue_Grey);
-  --bs-btn-active-border-color: #0a53be;
-  --bs-btn-active-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
-  --bs-btn-disabled-color: var(--White);
-  --bs-btn-disabled-bg: #0d6efd;
-  --bs-btn-disabled-border-color: #0d6efd;
-}
-.btn-clearrow::before {
-  content: "↺ ";
-}*/
-/*.btn-reset {
-  --bs-btn-color: var(--White);;
-  --bs-btn-bg: var(--Super_Grey);
-  --bs-btn-border-color: var(--Calming_Blue_Grey);
-  --bs-btn-hover-color: var(--White);
-  --bs-btn-hover-bg: var(--Bold_Grey);
-  --bs-btn-hover-border-color: var(--Dark_River_Blue);
-  --bs-btn-focus-shadow-rgb: 49, 132, 253;
-  --bs-btn-active-color: var(--White);
-  --bs-btn-active-bg: var(--Misty_Blue_Grey);
-  --bs-btn-active-border-color: #0a53be;
-  --bs-btn-active-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
-  --bs-btn-disabled-color: var(--White);
-  --bs-btn-disabled-bg: #0d6efd;
-  --bs-btn-disabled-border-color: #0d6efd;
-}*/
 .btn-reset {
   --bs-btn-color: var(--White);
   --bs-btn-bg: var(--Milani);
@@ -394,7 +350,6 @@ input[class="magnitude"],input[class="hours"],input[class="minutes"],select {
     background:var(--Blue_Dianne);
     color:white;
 }
-/* #endregion */
 
 .bb-report-page-subtitle {
   margin: 0;
@@ -431,12 +386,8 @@ input[class="magnitude"],input[class="hours"],input[class="minutes"],select {
   object-fit: contain;
   display: block;
 }
-/*@media print {
-    #Navigation, #Page_Header, #Popup_Buttons, #Data_Entry, #Standalone_Table, #Table_Buttons, #Result, #Breakdown {
-        display: none !important;
-    }
+/* #endregion */
 
-  }*/
 .ReportWrapper{
   visibility: hidden;
 }

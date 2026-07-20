@@ -7,8 +7,8 @@ Template entry:
   manufacturer: 'Example brand', // tool brand
   name: 'Example tool', // tool model
   type: 'Example tool', // tool type
-  magnitude: 0', // tool vibration magnitude (calculated)
-  soundpower: '0', // tool sound power level (calculated)
+  magnitude: 0, // tool vibration magnitude (calculated)
+  soundpower: 0, // tool sound power level (calculated)
   category: 'preset'
   icon: "./Assets/Icons/Tools/SVG/iconname.svg"
 } 
