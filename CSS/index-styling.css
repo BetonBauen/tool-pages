@@ -2,28 +2,28 @@ body {
   background: #f2f4f8;
 }
 
-.education {
+.first-card {
   --bg-color: #ffd861;
   --bg-color-light: #ffeeba;
   --text-color-hover: #4C5656;
   --box-shadow-color: rgba(255, 215, 97, 0.48);
 }
 
-.credentialing {
+.second-card {
   --bg-color: #B8F9D3;
   --bg-color-light: #e2fced;
   --text-color-hover: #4C5656;
   --box-shadow-color: rgba(184, 249, 211, 0.48);
 }
 
-.wallet {
+.third-card {
   --bg-color: #CEB2FC;
   --bg-color-light: #F0E7FF;
   --text-color-hover: #fff;
   --box-shadow-color: rgba(206, 178, 252, 0.48);
 }
 
-.human-resources {
+.fourth-card {
   --bg-color: #DCE9FF;
   --bg-color-light: #f1f7ff;
   --text-color-hover: #4C5656;
@@ -95,6 +95,7 @@ body {
   position: relative;
   z-index: 1;
   transition: all 0.3s ease-out;
+  
 }
 
 .circle:after {
@@ -105,14 +106,15 @@ body {
   position: absolute;
   background: var(--bg-color);
   border-radius: 50%;
-  top: 7px;
-  left: 7px;
+  /*top: 7px;*/
+  /*left: 7px;*/
   transition: opacity 0.3s ease-out;
 }
 
 .circle svg {
   z-index: 10000;
   transform: translateZ(0);
+  max-height: 80%;
 }
 
 .overlay {
