@@ -51,6 +51,7 @@
 }
 input[id="employeeName"], input[id="siteName"], input[id="startDate"], input[id="JobNumber"] {
   width: 500px !important;
+  color:
 }
 /* #endregion */
 
@@ -420,7 +421,6 @@ input[class="magnitude"],input[class="hours"],input[class="minutes"],select {
     width: auto;
     max-height:300px;
     overflow-y:auto;
-
     background:#fff;
     z-index:9999;
 }
@@ -450,4 +450,7 @@ input[class="magnitude"],input[class="hours"],input[class="minutes"],select {
     line-height: 29px;
     padding: 0 2rem 0 0.75rem;   /* leave room for dropdown arrow if you add one */
     font-size: 0.875rem;
+}
+.form-select {
+color: #595c5f;
 }

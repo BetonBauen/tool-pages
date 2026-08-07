@@ -11,7 +11,7 @@ Template entry:
   soundpower: 0, // tool sound power level (calculated)
   category: 'preset'
   icon: "./Assets/Icons/Tools/SVG/iconname.svg"
-} 
+}
 */
 
 const Tool_Library = [
@@ -39,7 +39,7 @@ const Tool_Library = [
   magnitude: 8,
   soundpower: 104,
   category: 'preset',
-  icon: "./Assets/Icons/Tools/SVG/Hilti_Grinder_Corded.svg"
+  icon: "https://raw.githubusercontent.com/BetonBauen/tool-pages/refs/heads/testing/Assets/Icons/Tools/SVG/Hilti_Grinder_Corded.svg"
 }
 ,
 {
@@ -50,7 +50,7 @@ const Tool_Library = [
   magnitude: 8,
   soundpower: 104,
   category: 'preset',
-  icon: "./Assets/Icons/Tools/SVG/Hilti_Grinder_Corded.svg"
+  icon: "https://raw.githubusercontent.com/BetonBauen/tool-pages/refs/heads/testing/Assets/Icons/Tools/SVG/Hilti_Grinder_Corded.svg"
 }
 ,
 {
@@ -61,7 +61,7 @@ const Tool_Library = [
   magnitude: 6.8,
   soundpower: 105,
   category: 'preset',
-  icon: "./Assets/Icons/Tools/SVG/Hilti_Grinder_Corded.svg"
+  icon: "https://raw.githubusercontent.com/BetonBauen/tool-pages/refs/heads/testing/Assets/Icons/Tools/SVG/Hilti_Grinder_Corded.svg"
 }
 ,
 {
@@ -72,7 +72,7 @@ const Tool_Library = [
   magnitude: 5.9,
   soundpower: 105,
   category: 'preset',
-  icon: "./Assets/Icons/Tools/SVG/Hilti_Grinder_Corded.svg"
+  icon: "https://raw.githubusercontent.com/BetonBauen/tool-pages/refs/heads/testing/Assets/Icons/Tools/SVG/Hilti_Grinder_Corded.svg"
 }
 ,
 {
@@ -83,7 +83,7 @@ const Tool_Library = [
   magnitude: 6.4,
   soundpower: 106,
   category: 'preset',
-  icon: "./Assets/Icons/Tools/SVG/Hilti_Grinder_Corded.svg"
+  icon: "https://raw.githubusercontent.com/BetonBauen/tool-pages/refs/heads/testing/Assets/Icons/Tools/SVG/Hilti_Grinder_Corded.svg"
 }
 ,
 {
@@ -94,7 +94,7 @@ const Tool_Library = [
   magnitude: 7.8,
   soundpower: 106,
   category: 'preset',
-  icon: "./Assets/Icons/Tools/SVG/Hilti_Grinder_Corded.svg"
+  icon: "https://raw.githubusercontent.com/BetonBauen/tool-pages/refs/heads/testing/Assets/Icons/Tools/SVG/Hilti_Grinder_Corded.svg"
 }
 ,
 {
@@ -105,7 +105,7 @@ const Tool_Library = [
   magnitude: 5.3,
   soundpower: 97,
   category: 'preset',
-  icon: "./Assets/Icons/Tools/SVG/Hilti_Grinder_Corded.svg"
+  icon: "https://raw.githubusercontent.com/BetonBauen/tool-pages/refs/heads/testing/Assets/Icons/Tools/SVG/Hilti_Grinder_Corded.svg"
 }
 ,
 {
@@ -116,7 +116,7 @@ const Tool_Library = [
   magnitude: 4.7,
   soundpower: 94,
   category: 'preset',
-  icon: "./Assets/Icons/Tools/SVG/Hilti_Grinder_Corded.svg"
+  icon: "https://raw.githubusercontent.com/BetonBauen/tool-pages/refs/heads/testing/Assets/Icons/Tools/SVG/Hilti_Grinder_Corded.svg"
 }
 ,
 {
@@ -127,7 +127,7 @@ const Tool_Library = [
   magnitude: 6.9,
   soundpower: 100,
   category: 'preset',
-  icon: "./Assets/Icons/Tools/SVG/Hilti_Grinder_Cordless.svg"
+  icon: "https://raw.githubusercontent.com/BetonBauen/tool-pages/refs/heads/testing/Assets/Icons/Tools/SVG/Hilti_Grinder_Cordless.svg"
 }
 ,
 {
@@ -138,7 +138,7 @@ const Tool_Library = [
   magnitude: 6.9,
   soundpower: 100,
   category: 'preset',
-  icon: "./Assets/Icons/Tools/SVG/Hilti_Grinder_Cordless.svg"
+  icon: "https://raw.githubusercontent.com/BetonBauen/tool-pages/refs/heads/testing/Assets/Icons/Tools/SVG/Hilti_Grinder_Cordless.svg"
 }
 ,
 {
@@ -149,7 +149,7 @@ const Tool_Library = [
   magnitude: 7.9,
   soundpower: 97,
   category: 'preset',
-  icon: "./Assets/Icons/Tools/SVG/Hilti_Grinder_Cordless.svg"
+  icon: "https://raw.githubusercontent.com/BetonBauen/tool-pages/refs/heads/testing/Assets/Icons/Tools/SVG/Hilti_Grinder_Cordless.svg"
 }
 ,
 {
@@ -160,7 +160,7 @@ const Tool_Library = [
   magnitude: 8.3,
   soundpower: 104,
   category: 'preset',
-  icon: "./Assets/Icons/Tools/SVG/Hilti_Grinder_Corded.svg"
+  icon: "https://raw.githubusercontent.com/BetonBauen/tool-pages/refs/heads/testing/Assets/Icons/Tools/SVG/Hilti_Grinder_Corded.svg"
 }
 ,
 {
@@ -231,7 +231,7 @@ const Tool_Library = [
   magnitude: 3.62,
   soundpower: 102,
   category: 'preset',
-  icon: "./Assets/Icons/Tools/SVG/Hilti_Circular_Saw.svg"
+  icon: "https://raw.githubusercontent.com/BetonBauen/tool-pages/refs/heads/testing/Assets/Icons/Tools/SVG/Hilti_Circular_Saw.svg"
 }
 ,
 {
@@ -242,7 +242,7 @@ const Tool_Library = [
   magnitude: 13.4,
   soundpower: 111,
   category: 'preset',
-  icon: "./Assets/Icons/Tools/SVG/Hilti_Hammer_Drill_Driver_Cordless.svg"
+  icon: "https://raw.githubusercontent.com/BetonBauen/tool-pages/refs/heads/testing/Assets/Icons/Tools/SVG/Hilti_Hammer_Drill_Driver_Cordless.svg"
 }
 ,
 {
@@ -253,7 +253,7 @@ const Tool_Library = [
   magnitude: 16.9,
   soundpower: 105,
   category: 'preset',
-  icon: "./Assets/Icons/Tools/SVG/Hilti_Hammer_Drill_Driver_Cordless.svg"
+  icon: "https://raw.githubusercontent.com/BetonBauen/tool-pages/refs/heads/testing/Assets/Icons/Tools/SVG/Hilti_Hammer_Drill_Driver_Cordless.svg"
 }
 ,
 {
@@ -264,7 +264,7 @@ const Tool_Library = [
   magnitude: 21.5,
   soundpower: 110,
   category: 'preset',
-  icon: "./Assets/Icons/Tools/SVG/Hilti_Hammer_Drill_Driver_Cordless_Alt.svg"
+  icon: "https://raw.githubusercontent.com/BetonBauen/tool-pages/refs/heads/testing/Assets/Icons/Tools/SVG/Hilti_Hammer_Drill_Driver_Cordless_Alt.svg"
 }
 ,
 {
@@ -295,7 +295,7 @@ const Tool_Library = [
   magnitude: 21.7,
   soundpower: 99,
   category: 'preset',
-  icon: "./Assets/Icons/Tools/SVG/Hilti_Reciprocating_Saw.svg"
+  icon: "https://raw.githubusercontent.com/BetonBauen/tool-pages/refs/heads/testing/Assets/Icons/Tools/SVG/Hilti_Reciprocating_Saw.svg"
 }
 ,
 {
@@ -306,7 +306,7 @@ const Tool_Library = [
   magnitude: 22.8,
   soundpower: 102,
   category: 'preset',
-  icon: "./Assets/Icons/Tools/SVG/Hilti_Reciprocating_Saw.svg"
+  icon: "https://raw.githubusercontent.com/BetonBauen/tool-pages/refs/heads/testing/Assets/Icons/Tools/SVG/Hilti_Reciprocating_Saw.svg"
 }
 ,
 {
@@ -327,7 +327,7 @@ const Tool_Library = [
   magnitude: 4.2,
   soundpower: 98,
   category: 'preset',
-  icon: "./Assets/Icons/Tools/SVG/Hilti_Jackhammer.svg"
+  icon: "https://raw.githubusercontent.com/BetonBauen/tool-pages/refs/heads/testing/Assets/Icons/Tools/SVG/Hilti_Jackhammer.svg"
 }
 ,
 {
@@ -358,7 +358,7 @@ const Tool_Library = [
   magnitude: 7.8,
   soundpower: 109,
   category: 'preset',
-  icon: "./Assets/Icons/Tools/SVG/Hilti_Jackhammer_Heavy.svg"
+  icon: "https://raw.githubusercontent.com/BetonBauen/tool-pages/refs/heads/testing/Assets/Icons/Tools/SVG/Hilti_Jackhammer_Heavy.svg"
 }
 ,
 {
@@ -499,7 +499,7 @@ const Tool_Library = [
   magnitude: 8.4,
   soundpower: 100,
   category: 'preset',
-  icon: "./Assets/Icons/Tools/SVG/Hilti_Demolition_Hammer.svg"
+  icon: "https://raw.githubusercontent.com/BetonBauen/tool-pages/refs/heads/testing/Assets/Icons/Tools/SVG/Hilti_Demolition_Hammer.svg"
 }
 ,
 {
@@ -530,7 +530,7 @@ const Tool_Library = [
   magnitude: 11.2,
   soundpower: 108.2,
   category: 'preset',
-  icon: "./Assets/Icons/Tools/SVG/Makita_Jackhammer_Alt.svg"
+  icon: "https://raw.githubusercontent.com/BetonBauen/tool-pages/refs/heads/testing/Assets/Icons/Tools/SVG/Makita_Jackhammer_Alt.svg"
 }
 
 ];

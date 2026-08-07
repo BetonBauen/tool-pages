@@ -34,7 +34,7 @@ document.addEventListener("click", () => {
 
   const toolData = window.getToolLibrary ? window.getToolLibrary() : [];
   console.log(`-> Loaded ${toolData.length} tools into the inventory buffer.`);
- 
+
   const operativeData = window.getOperativeLibrary ? window.getOperativeLibrary() : [];
   console.log(`-> Loaded ${operativeData.length} operatives into the inventory buffer.`);
 
@@ -92,7 +92,7 @@ function updateAddButton() {
       tooltip.setContent({ ".tooltip-inner": reason });
     }
   }
-  
+
   else {
     wrapper.setAttribute( "data-bs-original-title", "Add another tool" );
 
@@ -135,14 +135,14 @@ function setupStandaloneRow(row, isInitial) {
   const hours = row.querySelector(".standalone-hours");
   const minutes = row.querySelector(".standalone-minutes");
   const vibration = row.querySelector(".standalone-vibration");
-  
+
   vibration.addEventListener("input", () => {
   calculateRow(row);
   updateOutput();
   updateBreakdown();
   updateAddButton();
 });
-  
+
  //console.log("select =", select);
  //console.log("panel =", panel);
  if (!isInitial) { row.classList.add("compact"); }
@@ -183,7 +183,7 @@ function setupStandaloneRow(row, isInitial) {
 	    updateAddButton();
     });
   });
-  
+
   const removeBtn = row.querySelector('[data-role="remove-row"]');
 
 if (removeBtn) {
@@ -204,7 +204,7 @@ if (removeBtn) {
 	  updateAddButton();
   });
 }
-  
+
 }
 
 function addStandaloneRow(isInitial = false) {
@@ -363,28 +363,28 @@ function buildDropdown(panel, tools, row) {
 	const textSpan = document.createElement("span");
 	textSpan.className = "mfr-text";
 	textSpan.textContent = mfrDisplay;
-	
+
 	mfrHeader.appendChild(textSpan);
-	
+
 	const img = document.createElement("img");
 	img.className = "manufacturer-logo";
 	img.alt = mfrDisplay;
 	img.src = `./Assets/Logos/SVG/${mfrDisplay}.svg`;
 	img.loading = "eager";
-	
+
 	mfrHeader.classList.add("no-logo");
 	img.onload = () => {
 		mfrHeader.classList.remove("no-logo");
 		mfrHeader.classList.add("has-logo");
 	}
-	
+
 	img.onerror = () => {
 		mfrHeader.classList.remove("has-logo");
 		mfrHeader.classList.add("no-logo");
 	};
 
 	mfrHeader.appendChild(img);
-	
+
       panel.appendChild(mfrHeader);
 
       Object.keys(grouped[mfr])
@@ -461,7 +461,7 @@ function calculateRow(row) {
     row.dataset.a8 = partialMs;
     updateToolStatus(row);
   }
-  
+
   else {
     row.dataset.mag = 0;
     row.dataset.minutes = 0;
@@ -671,12 +671,13 @@ function updateBreakdown() {
     const type = toolData?.type || "";
 
     let displayName = model;
-	
+
 	  if (toolData) {
       displayName = `${toolData.manufacturer} ${toolData.name} (${toolData.type})`;
     }
 
-    const icon = toolData?.icon || "./Assets/Icons/Tools/SVG/Default.svg";
+    const icon = toolData?.icon || "https://raw.githubusercontent.com/BetonBauen/tool-pages/refs/heads/testing/Assets/Icons/Tools/SVG/Default.svg";
+    icon.loading = "eager";
 
     let pts = 0;
     let a8 = 0;
@@ -687,7 +688,7 @@ function updateBreakdown() {
     mag = parseFloat(row.querySelector(".standalone-vibration")?.value) || 0;
     h = parseFloat(row.querySelector(".standalone-hours")?.value) || 0;
     m = parseFloat(row.querySelector(".standalone-minutes")?.value) || 0;
-      
+
     const totalMins = (h * 60) + m;
     pts = mag > 0 && totalMins > 0 ? (2 * Math.pow(mag, 2) * (totalMins / 60)) : 0;
     a8 = mag > 0 && totalMins > 0 ? (mag * Math.sqrt(totalMins / 480)) : 0;

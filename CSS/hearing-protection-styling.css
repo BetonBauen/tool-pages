@@ -1,9 +1,9 @@
 .noise-alert {
-  --bs-alert-color: var(--Tar) !important;
-  --bs-alert-bg: #eaf7fc !important;
+  --bs-alert-color: var(--Tar);
+  --bs-alert-bg: #eaf7fc ;
   --bs-alert-border-color: #bdf0ff;
-  --bs-alert-link-color: var(--Tar) !important;
-  border-left:6px solid #00b0f0 !important;}
+  --bs-alert-link-color: var(--Tar);
+  border-left:6px solid #00b0f0;}
 
 .badge {
 --bs-badge-font-size: 1.5em !important;}
@@ -20,7 +20,3 @@
 
 
 
-
-#output {
-  padding-top: 60px;
-}

@@ -24,23 +24,52 @@
 <!-- Page body -->
 <body class="d-flex flex-column" style="height: 100%">
   <!-- Navigation -->
-  <section id="Navigation">
-  <nav class="navbar navbar-expand-lg navbar-dark bg-dark bb-nav px-3">
-    <a class="navbar-brand" href="#"></a>
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-        <li class="nav-item active">
-          <a class="nav-link active" aria-current="page" href="#">HAVS CALCULATOR<span class="visually-hidden">(current)</span></a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="noise.html">TOOL NOISE LEVELS</a>
-        </li>
-      </ul>
+ <section id="Navigation">
+    <nav class="navbar navbar-dark bg-dark bb-nav px-3">
+      <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
+        <div class="offcanvas-header">
+          <h5 class="offcanvas-title bbunderlinestyle" id="offcanvasNavbarLabel">Menu</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+        </div>
+        <div class="offcanvas-body">
+          <h5>
+                    List of pages goes here:
+                </h5>
+          <p></p>
+          
+<div class="list-group">
+    <a href="index.html" class="list-group-item list-group-item-action flex-column align-items-start">
+    <div class="d-flex w-100 justify-content-between">
+      <h5 class="mb-1">Index</h5>
     </div>
-  </nav>
+    <p class="mb-1">Go to the index page</p>
+  </a>
+  <a href="vibration.html" class="list-group-item list-group-item-action flex-column align-items-start active">
+    <div class="d-flex w-100 justify-content-between">
+      <h5 class="mb-1">HAVS Calculator</h5>
+    </div>
+    <p class="mb-1">Work out  overall daily exposure to vibration.</p>
+  </a>
+  <a href="noise.html" class="list-group-item list-group-item-action flex-column align-items-start">
+    <div class="d-flex w-100 justify-content-between">
+      <h5 class="mb-1">Tool noise levels</h5>
+    </div>
+    <p class="mb-1">View the noise levels of tools.</p>
+  </a>
+  <a href="hearingprotection.html" class="list-group-item list-group-item-action flex-column align-items-start">
+    <div class="d-flex w-100 justify-content-between">
+      <h5 class="mb-1">Hearing protection vaidator</h5>
+    </div>
+    <p class="mb-1">Check your hearing protection is adequate for the tool being used.</p>
+  </a>
+</div>
+     
+        </div>
+      </div>
+    </nav>
   </section>
   <!-- Header -->
   <section id="Page Header">
@@ -206,7 +235,7 @@
           <div class="input-group input-group-sm mb-2">
             <span class="input-group-text bb-input-group-text" id="nameInput">Name:</span>
               <div class="employee-dropdown">
-    <div id="employeeName" class="employee-select form-select text-start" style="cursor:pointer; width: ">
+    <div id="employeeName" class="employee-select form-select text-start" style="cursor:pointer;">
         Select employee
     </div>
 
@@ -276,8 +305,8 @@
 		</template>
         <template id="standaloneToolTemplateCompact">
           <div class="standalone-calculator-row compact" data-tool-name="" data-magnitude="0">
-            <div class="row align-items-end g-2 gy-2">
-              <div class="col-5 position-relative pt-0 mt-0 g-0">
+            <div class="row align-items-end g-2 gy-1 mx-0">
+              <div class="col-5 position-relative pt-0 mt-0 g-0 mx-0">
                 <div class="tool-status-indicator"></div>
                   <div class="tool-dropdown">
                   <div class="standalone-tool-select tool-selected form-select py-2" style="cursor: pointer; min-height: 38px;">Select tool</div>

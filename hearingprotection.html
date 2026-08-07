@@ -1,52 +1,78 @@
 <!DOCTYPE html>
 <html lang="en">
-<!-- Page head -->
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>HEARING PROTECTION VALIDATOR | Beton Bauen Ltd</title>
   <!-- Stylesheets -->
-  <link rel="stylesheet" href="CSS/bootstrap-5.3.8.css" > <!-- Import bootstrap stylesheet -->
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css"> <!-- Import bootstrap icons -->
-  <link rel="stylesheet" href="CSS/general-styling.css" type="text/css"> <!-- Import base stylesheet -->
-  <link rel="stylesheet" href="CSS/tool-noise-styling.css" type="text/css"> <!-- Import tool noise stylesheet -->
+  <!-- Import bootstrap stylesheet --><link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+  <!-- Import bootstrap icons --><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css">
+  <!-- Import base stylesheet --><link rel="stylesheet" href="CSS/general-styling.css" type="text/css">
+  <!-- Import hearing protection stylesheet --><link rel="stylesheet" href="CSS/tool-vibration-styling.css" type="text/css">
+  <!-- Import hearing protection stylesheet --><link rel="stylesheet" href="CSS/hearing-protection-styling.css" type="text/css">
   <!-- Icons -->
-  <link rel="icon" sizes="192x192" href="Assets/Logos/SVG/BetonBauenLogo.svg">
-  <link rel="shortcut icon" href="Assets/Logos/SVG/BetonBauenLogo.svg">
-  <link rel="apple-touch-icon" href="Assets/Logos/SVG/BetonBauenLogo.svg">
-  <link rel="mask-icon" href="Assets/Logos/SVG/BetonBauenLogo.svg">
+  <!-- Favicon --><link rel="icon" sizes="192x192" href="Assets/Logos/SVG/BetonBauenLogo.svg">
+  <!-- Favicon --><link rel="shortcut icon" href="Assets/Logos/SVG/BetonBauenLogo.svg">
+  <!-- iOS home screen icon --><link rel="apple-touch-icon" href="Assets/Logos/SVG/BetonBauenLogo.svg">
+  <!-- Safari pinned tab icon --><link rel="mask-icon" href="Assets/Logos/SVG/BetonBauenLogo.svg">
+  <!-- Import Google material icons --><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
   <!-- Fonts -->
-  <link rel="preconnect" href="https://fonts.googleapis.com"> <!-- Import Roboto font family -->
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin> <!-- Import Roboto font family -->
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" ><!-- Import Roboto font family -->
+  <!-- Import Roboto font --><link rel="preconnect" href="https://fonts.googleapis.com">
+                             <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+                             <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" >
 </head>
 <!-- Page body -->
 <body class="d-flex flex-column min-vh-100">
-  <!-- Navigation -->
-  <section id="Navigation">
-  <nav class="navbar navbar-expand-lg navbar-dark bg-dark bb-nav px-3">
-    <!--<a class="navbar-brand" href="#"></a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
-      aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>-->
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-        <li class="nav-item">
-          <a class="nav-link inactive" href="vibration.html">HAVS CALCULATOR</a>
-        </li>
-       <li class="nav-item">
-          <a class="nav-link inactive" href="noise.html">TOOL NOISE LEVELS</a>
-        </li>
-        <li class="nav-item active">
-          <a class="nav-link active" aria-current="page" href="#">HEARING PROTECTION VALIDATOR</a>
-        </li>
-      </ul>
+<!-- Navigation -->
+ <section id="Navigation">
+    <nav class="navbar navbar-dark bg-dark bb-nav px-3">
+      <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
+        <div class="offcanvas-header">
+          <h5 class="offcanvas-title bbunderlinestyle" id="offcanvasNavbarLabel">Menu</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+        </div>
+        <div class="offcanvas-body">
+          <h5>
+                    List of pages goes here:
+                </h5>
+          <p></p>
+          
+<div class="list-group">
+    <a href="index.html" class="list-group-item list-group-item-action flex-column align-items-start">
+    <div class="d-flex w-100 justify-content-between">
+      <h5 class="mb-1">Index</h5>
     </div>
-  </nav>
+    <p class="mb-1">Go to the index page</p>
+  </a>
+  <a href="vibration.html" class="list-group-item list-group-item-action flex-column align-items-start">
+    <div class="d-flex w-100 justify-content-between">
+      <h5 class="mb-1">HAVS Calculator</h5>
+    </div>
+    <p class="mb-1">Work out  overall daily exposure to vibration.</p>
+  </a>
+  <a href="noise.html" class="list-group-item list-group-item-action flex-column align-items-start">
+    <div class="d-flex w-100 justify-content-between">
+      <h5 class="mb-1">Tool noise levels</h5>
+    </div>
+    <p class="mb-1">View the noise levels of tools.</p>
+  </a>
+  <a href="hearingprotection.html" class="list-group-item list-group-item-action flex-column align-items-start active">
+    <div class="d-flex w-100 justify-content-between">
+      <h5 class="mb-1">Hearing protection vaidator</h5>
+    </div>
+    <p class="mb-1">Check your hearing protection is adequate for the tool being used.</p>
+  </a>
+</div>
+     
+        </div>
+      </div>
+    </nav>
   </section>
-  <!-- Header -->
+<!-- Header -->
   <section id="Page Header">
     <header>
       <div class="container-fluid bb-header-container">
@@ -62,27 +88,65 @@
             <a href="https://www.betonbauen.com/" target="_blank" rel="noopener">
               <img class="bb-logo float-end" alt="Betonbauen logo"/>
             </a>
-          </div>		
+          </div>
         </div>
       </div>
     </header>
   </section>
 
+     <div class="container-fluid bb-table mt-4 mb-4">
+      <span class="input-group-text text-bold section-header mb-2">TOOL DATA</span>
+       <div class="row g-2 pb-2 tool-header-row mx-0">
+         <div class="col-5 text-bold bb-tool-data-text g-2 text-center">Tool</div>
+         <div class="col-auto"></div>
+         <div class="col-5 text-bold bb-tool-data-text g-2 text-center">Hearing Protection (SNR dB)</div>
+       </div>
+       <div class="row g-2 pb-4 mx-0">
+<div class="col-5 position-relative pt-0 mt-0 g-0 mx-0">
+    <select id="toolSelect" class="standalone-tool-select tool-selected form-select py-2" style="cursor: pointer; min-height: 38px;">
+                <option value="">Select Tool...</option>
+            </select>
+  </div>
+         <div class="col-auto"></div>
+                 <div class="col-5 pt-0 mt-0 g-0">
+          
+            <input
+                type="number"
+                id="snrInput"
+                class="form-control text-center"
+                placeholder="e.g. 27">
+        </div>
+       </div>  
 
+<div id="output" class="alert result">
 
+    <h5 id="result-title"></h5>
 
+    <p id="result-exposure"></p>
 
+    <p id="result-detail"></p>
 
+    <p id="result-action"></p>
+
+</div>       
+
+	</div>
+  
+  
+  
+  
+  
   
 
 
 
 
+    
 
-     
+
+
   
-      
-      
+  <section id="Page Footer">
   <!--<footer class="text-center mt-auto" style="background: #f2f2f2; height: 120px; position: absolute; bottom: 0; left:0; width: 100%;">
     <div class="container mt-auto">
       <div class="row mt-auto">
@@ -92,11 +156,12 @@
       </div>
     </div>
   </footer>-->
+  </section>
   <!-- Include all compiled plugins (below), or include individual files as needed -->
-  <script src="JS/popper-2.11.8.min.js"></script>
-  <script src="JS/bootstrap-5.3.8.js"></script>
-  <script src="JS/Tools.js"></script>
- 
+<script src="JS/popper-2.11.8.min.js"></script>
+<script src="JS/bootstrap-5.3.8.js"></script>
+<script src="js/tools.js"></script>
+<script src="JS/hearingprotection.js"></script>
 
 </body>
 </html>

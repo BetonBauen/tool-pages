@@ -1,5 +1,5 @@
 /* #region DECLARATIONS */
-:root { 
+:root {
   /* #region Logos */
   --bblogo_main: url('https://raw.githubusercontent.com/ChrisAndrewsBB/tool-pages/refs/heads/testing/Assets/Logos/PNG/BetonBauenLogo_20.png');
   --bblogo_pride:url('https://raw.githubusercontent.com/ChrisAndrewsBB/tool-pages/refs/heads/testing/Assets/Logos/PNG/BetonBauenLogo_20_Pride.png');
@@ -45,7 +45,7 @@
   --Orange: #ffa500;
   --Gray_Hint: #e6e6e6;
   --Rare_Jade: #a3cfbb;
-  --Trout: #495057; 
+  --Trout: #495057;
   --Tar: #2b2f32; /* Result text */
   --Gin: #e8f5e9; /* Safe band background */
   --Subtle_Mint: #c8e6c9; /* Safe band border */
@@ -59,9 +59,9 @@
   --Sazerac:#fff3e0; /* Alert band background */
   --Vivid_Gamboge:#ff9800; /* Alert band main */
   --Pale_Orange: #fdce9b; /* Alert border */
-  --Digital_Red:#ff0000; /* Danger band main */ 
-  --Pink_Affair:#ffecec; /* Danger band background */ 
-  --Pinkest: #f1aeb5; /* Danger border */   
+  --Digital_Red:#ff0000; /* Danger band main */
+  --Pink_Affair:#ffecec; /* Danger band background */
+  --Pinkest: #f1aeb5; /* Danger border */
   /* #endregion */
 }
 /* #endregion */
@@ -75,7 +75,9 @@
 /* #region NAVIGATION */
 .bb-nav {
   background-color: var(--Vintage_Dark_Blue) !important;
-  height: 35px !important;
+  color: var(--White);
+  height: 45px !important;
+  /*height: 35px !important;*/
 }
 /* #endregion */
 
@@ -212,3 +214,20 @@ color: var(--White);
 }
 
 
+.navbar-toggler-icon {
+  display: inline-block;
+  width: 0.5em;
+  height: 0.5em;
+  vertical-align: middle;
+  background-image: var(--bs-navbar-toggler-icon-bg);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 100%;
+}
+.menu-nav-item {
+ color:var(--Matt_Graphite);
+ text-decoration: none;
+}
+.list-group-item.active {
+  background-color: var(--Vivid_Cerulean) !important;;
+}

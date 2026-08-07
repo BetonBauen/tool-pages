@@ -69,7 +69,7 @@ function renderToolBreakdown(grouped) {
   const img = document.createElement("img");
   img.className = "manufacturer-logo";
   img.alt = mfr;
-  img.src = `./Assets/Logos/SVG/${mfr}.svg`;
+  img.src = `https://raw.githubusercontent.com/BetonBauen/tool-pages/refs/heads/testing/Assets/Logos/SVG/${mfr}.svg`;
   img.loading = "eager";
   mfrHeader.classList.add("no-logo");
   img.onload = () => {
@@ -91,13 +91,14 @@ function renderToolBreakdown(grouped) {
     .sort((a, b) => a.name.localeCompare(b.name))
     .forEach(tool => {
       const sound = Number(tool.soundpower) || 0;
-      const icon = tool.icon || "./Assets/Icons/Tools/SVG/Default.svg";
+      const icon = tool.icon || "https://raw.githubusercontent.com/BetonBauen/tool-pages/refs/heads/testing/Assets/Icons/Tools/SVG/Default.svg";
+      icon.loading = "eager";
       const div = document.createElement("div");
       div.className = "alert noise-alert mb-2";
       div.innerHTML = `
         <div class="row g-0 align-items-center">
         <div class="col-auto pe-3">
-        <imgsrc="${icon}" width="64" height="64" onerror="this.src='./Assets/Icons/Tools/SVG/Default.svg'">
+        <img src="${icon}" width="64" height="64" onerror="this.src='https://raw.githubusercontent.com/BetonBauen/tool-pages/refs/heads/testing/Assets/Icons/Tools/SVG/Default.svg'">
         </div>
         <div class="col">
         <h5 class="mb-1">${tool.name}</h5>
