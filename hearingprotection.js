@@ -7,10 +7,6 @@ document.addEventListener("DOMContentLoaded", () => {
     buildDropdown();
 
     document
-        .getElementById("toolSelect")
-        .addEventListener("change", calculate);
-
-    document
         .getElementById("snrInput")
         .addEventListener("input", calculate);
 
@@ -40,38 +36,34 @@ function buildDropdown() {
 
         });
 
-
+    select.addEventListener("change",calculate);
 
 }
 
-function calculate() {
+function calculate(){
+console.log("CALCULATE FIRED");
+    const select=document.getElementById("toolSelect");
 
-    const select = document.getElementById("toolSelect");
+    const snr=parseFloat(document.getElementById("snrInput").value)||0;
 
-    const spl = parseFloat(select.value);
+    const spl=parseFloat(select.value)||0;
 
-    const snr = parseFloat(document.getElementById("snrInput").value);
+    const effective=spl-snr;
 
-    // Don't show anything until both values exist
-    if (isNaN(spl) || isNaN(snr) || snr <= 0) {
-        return;
-    }
-
-    const effective = Math.max(0, spl - (snr - 4));
-
-    updateResult(effective, spl, snr);
+    updateResult(effective,spl,snr);
 
 }
 
 function updateResult(level,spl,snr){
 
     const output=document.getElementById("output");
-    const icon = document.getElementById("result-icon");
+
     const title=document.getElementById("result-title");
     const exposure=document.getElementById("result-exposure");
     const detail=document.getElementById("result-detail");
     const action=document.getElementById("result-action");
-output.classList.remove("d-none");
+    const icon = document.getElementById("result-icon");
+
     output.className="alert result";
 
     if(!spl){
@@ -140,20 +132,6 @@ output.classList.remove("d-none");
 
     output.classList.add(band);
 
-    const icons = {
-      safe: "https://raw.githubusercontent.com/BetonBauen/tool-pages/refs/heads/testing/Assets/Icons/Status/SVG/Safe.svg",
-      caution: "https://raw.githubusercontent.com/BetonBauen/tool-pages/refs/heads/testing/Assets/Icons/Status/SVG/Caution.svg",
-      warning: "https://raw.githubusercontent.com/BetonBauen/tool-pages/refs/heads/testing/Assets/Icons/Status/SVG/Warning.svg",
-      alert: "https://raw.githubusercontent.com/BetonBauen/tool-pages/refs/heads/testing/Assets/Icons/Status/SVG/Alert.svg",
-      danger: "https://raw.githubusercontent.com/BetonBauen/tool-pages/refs/heads/testing/Assets/Icons/Status/SVG/Danger.svg"
-    };
-
-  const exposureLevel = getExposureBand(band);
-
-  icon.innerHTML = `
-    <img src="${icons[exposureLevel]}" class="result-status-icon" alt="${exposureLevel}">
-  `;
-
     title.textContent=heading;
 
     exposure.innerHTML=`
@@ -162,11 +140,34 @@ output.classList.remove("d-none");
         Estimated Exposure: <strong>${level.toFixed(1)} dB(A)</strong>
     `;
 
+ const exposureLevel = getExposureBand(band);
+
+console.log("band:", band);
+console.log("exposureLevel:", exposureLevel);
+console.log("result-icon element:", icon);
+
+  const icons = {
+    safe: "https://raw.githubusercontent.com/BetonBauen/tool-pages/refs/heads/testing/Assets/Icons/Status/SVG/Safe.svg",
+    caution: "https://raw.githubusercontent.com/BetonBauen/tool-pages/refs/heads/testing/Assets/Icons/Status/SVG/Caution.svg",
+    warning: "https://raw.githubusercontent.com/BetonBauen/tool-pages/refs/heads/testing/Assets/Icons/Status/SVG/Warning.svg",
+    alert: "https://raw.githubusercontent.com/BetonBauen/tool-pages/refs/heads/testing/Assets/Icons/Status/SVG/Alert.svg",
+    danger: "https://raw.githubusercontent.com/BetonBauen/tool-pages/refs/heads/testing/Assets/Icons/Status/SVG/Danger.svg"
+  };
+console.log("band =", band);
+console.log("exposureLevel =", exposureLevel);
+console.log("icon =", icon);
+console.log("icon URL =", icons[exposureLevel]);
+  icon.innerHTML = `
+    <img src="${icons[exposureLevel]}" class="result-status-icon" alt="${exposureLevel}">
+  `;
+
+console.log("test ", icon.innerhtml);
     detail.textContent=text;
 
     action.textContent=advice;
 
 }
+
 function getExposureBand(band) {
-  return band.substring(5);
+  return band.substring(6);
 }
