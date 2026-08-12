@@ -76,7 +76,7 @@
 .bb-nav {
   background-color: var(--Vintage_Dark_Blue) !important;
   color: var(--White);
-  height: 45px !important;
+  height: 55px !important;
   /*height: 35px !important;*/
 }
 /* #endregion */
@@ -216,8 +216,8 @@ color: var(--White);
 
 .navbar-toggler-icon {
   display: inline-block;
-  width: 0.5em;
-  height: 0.5em;
+  width: 1.5em;
+  height: 1.5em;
   vertical-align: middle;
   background-image: var(--bs-navbar-toggler-icon-bg);
   background-repeat: no-repeat;

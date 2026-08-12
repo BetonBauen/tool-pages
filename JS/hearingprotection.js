@@ -47,17 +47,25 @@ function buildDropdown() {
 function calculate() {
 
     const select = document.getElementById("toolSelect");
-
-    const spl = parseFloat(select.value);
-
-    const snr = parseFloat(document.getElementById("snrInput").value);
+    const spl = parseFloat(select.value); // tool sound power level including uncertainty (dbA)
+    const snr = parseFloat(document.getElementById("snrInput").value); // hearing protection snr value (dbA)
+    const cWeight = 7; // 7dB standard conversion factor for converting dBA to dbC
+    const derating = 4; // 4dB derating factor
 
     // Don't show anything until both values exist
     if (isNaN(spl) || isNaN(snr) || snr <= 0) {
         return;
     }
 
-    const effective = Math.max(0, spl - (snr - 4));
+    const effective = Math.max(0, (spl + cWeight) - snr + derating);
+
+    console.log("tool sound - ", spl, " dbA");
+    console.log("c weight - ", cWeight, " dbA");
+    console.log("derating value - ", derating, " dbA");
+    console.log("hearing protection snr - ", spl, " dbA");
+    console.log("formula should be : (spl + c weight) - (hearing protection snr + derating) ", (spl + 7) - snr + 4 );
+    console.log("calculated result - ", effective);
+
 
     updateResult(effective, spl, snr);
 
@@ -71,7 +79,7 @@ function updateResult(level,spl,snr){
     const exposure=document.getElementById("result-exposure");
     const detail=document.getElementById("result-detail");
     const action=document.getElementById("result-action");
-output.classList.remove("d-none");
+    output.classList.remove("d-none");
     output.className="alert result";
 
     if(!spl){
@@ -93,49 +101,40 @@ output.classList.remove("d-none");
     let text;
     let advice;
 
+    if(level<70){
+      band = "band-caution";
+      heading = "Warning: Over-protection";
+      text = "Estimated exposure is very low (${level} db(A))";
+      advice = "Operative may be isolated and will struggle to hear alarms or communication. Consider a lower SNR level";
+    }
+
+
     if(level<80){
-
         band="band-safe";
-
         heading="Noise level acceptable";
-
         text="Estimated exposure below 80 dB(A).";
-
         advice="No additional hearing protection required.";
-
     }
+
     else if(level<85){
-
-        band="band-caution";
-
-        heading="Approaching exposure action value";
-
-        text="Estimated exposure between 80 and 85 dB(A).";
-
-        advice="Monitor exposure and provide hearing protection if required.";
-
-    }
-    else if(level<=87){
-
         band="band-warning";
-
-        heading="Hearing protection required";
-
-        text="Estimated exposure exceeds 85 dB(A).";
-
-        advice="Suitable hearing protection must be worn.";
-
+        heading="Approaching exposure action value";
+        text="Estimated exposure between 80 and 85 dB(A).";
+        advice="Monitor exposure and provide hearing protection if required.";
     }
+
+    else if(level<=87){
+        band="band-alert";
+        heading="Hearing protection insufficient";
+        text="Estimated exposure exceeds 85 dB(A).";
+        advice="Suitable hearing protection must be worn.";
+    }
+
     else{
-
         band="band-danger";
-
         heading="Exposure exceeds legal limit";
-
-        text="Estimated exposure exceeds 87 dB(A).";
-
+        text="Estimated exposure is (${level} db(A)";
         advice="Higher attenuation hearing protection or reduced exposure time is required.";
-
     }
 
     output.classList.add(band);
