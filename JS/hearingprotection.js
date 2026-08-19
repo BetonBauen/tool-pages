@@ -104,7 +104,7 @@ function updateResult(level,spl,snr){
     if(level<70){
       band = "band-caution";
       heading = "Warning: Over-protection";
-      text = "Estimated exposure is very low (" + level + "db(A))";
+      text = "Estimated exposure is very low (" + level + "db(A)). ";
       advice = "Operative may be isolated and will struggle to hear alarms or communication. Consider a lower SNR level";
     }
 
@@ -112,28 +112,28 @@ function updateResult(level,spl,snr){
     if(level<80){
         band="band-safe";
         heading="Noise level acceptable";
-        text="Estimated exposure below 80 dB(A).";
+        text="Estimated exposure below 80 dB(A). ";
         advice="No additional hearing protection required.";
     }
 
     else if(level<85){
         band="band-warning";
         heading="Approaching exposure action value";
-        text="Estimated exposure between 80 and 85 dB(A).";
+        text="Estimated exposure between 80 and 85 dB(A). ";
         advice="Monitor exposure and provide hearing protection if required.";
     }
 
     else if(level<=87){
         band="band-alert";
         heading="Hearing protection insufficient";
-        text="Estimated exposure exceeds 85 dB(A).";
+        text="Estimated exposure exceeds 85 dB(A). ";
         advice="Suitable hearing protection must be worn.";
     }
 
     else{
         band="band-danger";
         heading="Exposure exceeds legal limit";
-        text="Estimated exposure is " + level + "db(A)";
+        text="Estimated exposure is " + level + "db(A). ";
         advice="Higher attenuation hearing protection or reduced exposure time is required.";
     }
 
