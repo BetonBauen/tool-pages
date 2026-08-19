@@ -104,7 +104,7 @@ function updateResult(level,spl,snr){
     if(level<70){
       band = "band-caution";
       heading = "Warning: Over-protection";
-      text = "Estimated exposure is very low (${level} db(A))";
+      text = "Estimated exposure is very low (" + level + "db(A))";
       advice = "Operative may be isolated and will struggle to hear alarms or communication. Consider a lower SNR level";
     }
 
@@ -133,7 +133,7 @@ function updateResult(level,spl,snr){
     else{
         band="band-danger";
         heading="Exposure exceeds legal limit";
-        text="Estimated exposure is (${level} db(A)";
+        text="Estimated exposure is " + level + "db(A)";
         advice="Higher attenuation hearing protection or reduced exposure time is required.";
     }
 
