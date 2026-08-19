@@ -56,24 +56,24 @@
               </div>
               <p class="mb-1">Work out  overall daily exposure to vibration.</p>
             </a>
-  <a href="noise.html" class="list-group-item list-group-item-action flex-column align-items-start">
-    <div class="d-flex w-100 justify-content-between">
-      <h5 class="mb-1">Tool noise levels</h5>
-    </div>
-    <p class="mb-1">View the noise levels of tools.</p>
-  </a>
-  <a href="hearingprotection.html" class="list-group-item list-group-item-action flex-column align-items-start active">
-    <div class="d-flex w-100 justify-content-between">
-      <h5 class="mb-1">Hearing protection validator</h5>
-    </div>
-    <p class="mb-1">Check your hearing protection is adequate for the tool being used.</p>
-  </a>
-</div>
-     
+            <a href="noise.html" class="list-group-item list-group-item-action flex-column align-items-start">
+              <div class="d-flex w-100 justify-content-between">
+                <h5 class="mb-1">Tool noise levels</h5>
+              </div>
+              <p class="mb-1">View the noise levels of tools.</p>
+            </a>
+            <a href="hearingprotection.html" class="list-group-item list-group-item-action flex-column align-items-start active">
+              <div class="d-flex w-100 justify-content-between">
+                <h5 class="mb-1">Hearing protection validator</h5>
+              </div>
+              <p class="mb-1">Check your hearing protection is adequate for the tool being used.</p>
+            </a>
+          </div>
         </div>
       </div>
     </nav>
   </section>
+  
 <!-- Header -->
   <section id="Page Header">
     <header>
@@ -96,46 +96,45 @@
     </header>
   </section>
 
-     <div class="container-fluid bb-table mt-4 mb-4">
+<!-- Data Entry -->
+  <section id="Data Entry"> 
+    <div class="container-fluid bb-table mt-4 mb-4 ">
       <span class="input-group-text text-bold section-header mb-2">TOOL DATA</span>
-       <div class="row g-2 pb-2 tool-header-row mx-0">
-         <div class="col-5 text-bold bb-tool-data-text g-2 text-center">Tool</div>
-         <div class="col-auto"></div>
-         <div class="col-5 text-bold bb-tool-data-text g-2 text-center">Hearing Protection (SNR dB)</div>
+       <div class="row pb-2 tool-header-row mx-0 justify-content-center">
+         <div class="text-bold bb-tool-data-text text-center" style="width:49%;">Tool</div>
+         <div style="width:2%;"></div>
+         <div class="text-bold bb-tool-data-text text-center" style="width:49%;">Hearing Protection (SNR dB)</div>
        </div>
-       <div class="row g-2 pb-4 mx-0">
-<div class="col-6 position-relative pt-0 mt-0 g-0 mx-0">
-    <select id="toolSelect" class="standalone-tool-select tool-selected form-select py-2" style="cursor: pointer; min-height: 38px;">
-                <option value="">Select Tool...</option>
-            </select>
-  </div>
-         <div class="col-auto"></div>
-                 <div class="col-6 pt-0 mt-0 g-0">
-          
-            <input
-                type="number"
-                id="snrInput"
-                class="form-control text-center"
-                placeholder="enter SNR number">
-        </div>
-       </div>  
-
-  <section id="Result">
-      <span id="results-heading" class="input-group-text d-none text-bold section-header mb-3">SUMMARY</span>
-      <div id="output" class="alert result" role="alert">
-        <div class="result-header mb-2">
-          <span id="result-icon" class="result-icon"></span>
-          <span id="result-title" class="result-title"></span>
-        </div>
-        <div id="result-exposure" class="result-exposure mb-3"></div>
-        <span id="result-detail" class="result-detail mb-1"></span> <span id="result-action" class="result-action mb-1"></span>
-      </div>
-  </section>     
-
-
-</div>       
-
+       <div class="row pb-4 mx-0 g-0 justify-content-center">
+         <div class="position-relative" style="width:49%;">
+           <select id="toolSelect" class="standalone-tool-select tool-selected form-select py-2" style="cursor: pointer; min-height: 38px;">
+             <option value="">Select Tool...</option>
+           </select>
+         </div>
+         <div style="width:2%;"></div>
+         <div style="width:49%;">
+           <input type="number" id="snrInput" class="form-control text-center" placeholder="enter SNR number">
+         </div>
+       </div>
+    </div>
+  </section>
   
+<!-- Result -->
+  <section id="Result">
+    <div class="container-fluid bb-table mt-4 mb-4 ">
+      <span id="results-heading" class="input-group-text d-none text-bold section-header mb-3">SUMMARY</span>
+        <div id="output" class="alert result" role="alert">
+          <div class="result-header mb-2">
+            <span id="result-icon" class="result-icon"></span>
+            <span id="result-title" class="result-title"></span>
+          </div>
+          <div id="result-exposure" class="result-exposure mb-3"></div>
+          <span id="result-detail" class="result-detail mb-1"></span> <span id="result-action" class="result-action mb-1"></span>
+        </div>
+    </div>
+  </section>     
+      
+<!--***< Page Footer >***-->
   <section id="Page Footer">
   <!--<footer class="text-center mt-auto" style="background: #f2f2f2; height: 120px; position: absolute; bottom: 0; left:0; width: 100%;">
     <div class="container mt-auto">
@@ -147,6 +146,8 @@
     </div>
   </footer>-->
   </section>
+  
+<!--***< Script References >***--> 
   <!-- Include all compiled plugins (below), or include individual files as needed -->
   <script src="JS/popper-2.11.8.min.js"></script>
   <script src="JS/bootstrap-5.3.8.js"></script>
