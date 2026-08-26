@@ -263,9 +263,15 @@ function resetAll() {
 
   container.innerHTML = "";
 
-  document.getElementById("employeeName").value = "";
+  const employeeName = document.getElementById("employeeName");
+
+if (employeeName) {
+    employeeName.textContent = "Select employee";
+    employeeName.dataset.employee = "";
+}
   document.getElementById("siteName").value = "";
   document.getElementById("startDate").value = "";
+  document.getElementById("JobNumber").value = "";
 
   addStandaloneRow(true);
   updateOutput();
