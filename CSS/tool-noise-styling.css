@@ -3,24 +3,42 @@
   --bs-alert-bg: #eaf7fc !important;
   --bs-alert-border-color: #bdf0ff;
   --bs-alert-link-color: var(--Tar) !important;
-  border-left:6px solid #00b0f0 !important;}
+  border-left:6px solid #00b0f0 !important;
+}
 
 .badge {
---bs-badge-font-size: 1.5em !important;}
+--bs-badge-font-size: 1.5em !important;
+}
+@media (max-width: 375px) {
+
+.badge {
+--bs-badge-font-size: 0.8em !important;
+}
+
+}
 
 .noise-tool-heading {
-  padding: 10px 10px;}
+  padding: 10px 10px;
+}
 
 .noise-tool-subheading {
   padding: 6px 6px;
   background-color: var(--Calming_Blue_Grey);
-  text-transform: uppercase;}
-
-
-
-
-
+  text-transform: uppercase;
+}
 
 #output {
   padding-top: 60px;
 }
+
+/* Mobile */
+
+@media (max-width: 375px) {
+
+.input-group-text {
+font-size: 0.95rem !important;
+}
+
+
+}
+

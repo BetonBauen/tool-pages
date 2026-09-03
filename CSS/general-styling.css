@@ -123,23 +123,44 @@ h2 {
   margin-bottom: 20px;
   background: var(--Vivid_Cerulean);
 }
+@media (max-width: 375px) {
+.bb-rectangle {
+    height: 60px;
+}
+}
 .bb-page-title-container {
   padding-left: 15px;
   padding-top: 0.25rem ;
 
 }
+
 .bb-page-title {
   margin-top:15px;
   color:var(--Matt_Graphite);
   font-weight: 700;
   font-size: 2em;
 }
+@media (max-width: 375px) {
+.bb-page-title {
+    margin-top: 19px;
+    font-weight: 700;
+    font-size: 1.37em;
+}
+}
+
 .bb-page-subtitle {
   margin:0;
   color:var(--Matt_Graphite);
   font-weight: 200;
   font-size: 2em;
 }
+@media (max-width: 375px) {
+.bb-page-subtitle {
+    font-weight: 200;
+    font-size: 0.95em;
+}
+}
+
 .bb-logo-container {
  height:80px;
  object-fit: cover;
@@ -150,6 +171,13 @@ h2 {
   margin-top: 15px;
   padding-right: 15px;
   content: var(--bblogo_main);
+}
+@media (max-width: 375px) {
+.bb-logo {
+    max-width: 83%;
+    margin-top: 20px;
+    padding-right: 0px;
+}
 }
 /* #endregion */
 
